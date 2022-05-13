@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CosmoAlias</string>
+    <string name="rules_button">Правила</string>
+    <string name="new_game_button">Новая игра</string>
+    <string name="continue_button">Продолжить</string>
+    <string name="about_app_string">О приложении</string>
+    <string name="cosmo_alias_presented">Cosmo Alias:</string>
 </resources>
