@@ -13,10 +13,26 @@
         <action
             android:id="@+id/actionMainMenuFragmentToAboutAppFragment"
             app:destination="@id/aboutAppFragment" />
+        <action
+            android:id="@+id/actionMainMenuFragmentToRulesFragment"
+            app:destination="@id/rulesFragment" />
+        <action
+            android:id="@+id/actionMainMenuFragmentToTeamFragment"
+            app:destination="@id/teamFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutAppFragment"
         android:name="com.kelway.cosmoalias.presentation.fragments.AboutAppFragment"
         android:label="AboutAppFragment"
         tools:layout ="@layout/fragment_about_app"/>
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.kelway.cosmoalias.presentation.fragments.RulesFragment"
+        android:label="RulesFragment"
+        tools:layout ="@layout/fragment_rules"/>
+    <fragment
+        android:id="@+id/teamFragment"
+        android:name="com.kelway.cosmoalias.presentation.fragments.TeamFragment"
+        android:label="TeamFragment"
+        tools:layout ="@layout/fragment_team"/>
 </navigation>
