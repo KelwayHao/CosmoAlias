@@ -20,5 +20,8 @@ class MainMenuFragment: Fragment(R.layout.fragment_main_menu) {
         binding.buttonStartNewGame.setOnClickListener {
             findNavController().navigate(R.id.actionMainMenuFragmentToTeamFragment)
         }
+        binding.buttonSetting.setOnClickListener {
+            findNavController().navigate(R.id.actionMainMenuFragmentToSettingFragment)
+        }
     }
 }

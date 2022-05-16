@@ -19,6 +19,9 @@
         <action
             android:id="@+id/actionMainMenuFragmentToTeamFragment"
             app:destination="@id/teamFragment" />
+        <action
+            android:id="@+id/actionMainMenuFragmentToSettingFragment"
+            app:destination="@id/settingFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutAppFragment"
@@ -32,7 +35,34 @@
         tools:layout ="@layout/fragment_rules"/>
     <fragment
         android:id="@+id/teamFragment"
-        android:name="com.kelway.cosmoalias.presentation.fragments.TeamFragment"
+        android:name="com.kelway.cosmoalias.presentation.teams.TeamFragment"
         android:label="TeamFragment"
-        tools:layout ="@layout/fragment_team"/>
+        tools:layout ="@layout/fragment_team">
+        <action
+            android:id="@+id/actionTeamFragmentToWordSetsFragment"
+            app:destination="@id/wordSetsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.kelway.cosmoalias.presentation.fragments.SettingFragment"
+        android:label="SettingFragment"
+        tools:layout ="@layout/fragment_setting"/>
+    <fragment
+        android:id="@+id/addOwnSetFragment"
+        android:name="com.kelway.cosmoalias.presentation.fragments.AddOwnSetFragment"
+        android:label="AddOwnSetFragment"
+        tools:layout ="@layout/fragment_add_own_set">
+        <action
+            android:id="@+id/actionAddOwnSetFragmentToWordSetsFragment"
+            app:destination="@id/wordSetsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wordSetsFragment"
+        android:name="com.kelway.cosmoalias.presentation.wordset.WordSetsFragment"
+        android:label="WordSetsFragment"
+        tools:layout ="@layout/fragment_word_sets">
+        <action
+            android:id="@+id/actionWordSetsFragmentToAddOwnSetFragment"
+            app:destination="@id/addOwnSetFragment" />
+    </fragment>
 </navigation>
