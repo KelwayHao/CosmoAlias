@@ -18,4 +18,17 @@
     <string name="random_name">Случайное название</string>
     <string name="word_sets_string">Наборы слов</string>
     <string name="enter">Выбрать</string>
+    <string name="settings_string">Настройки</string>
+    <string name="save_string">Сохранить</string>
+    <string name="count_words_string">Количество слов</string>
+    <string name="long_round_string">Длинна раунда (сек)</string>
+    <string name="count_around_string">Количество кругов</string>
+    <string name="default_count_word">120</string>
+    <string name="default_long_round">60</string>
+    <string name="default_count_around">4</string>
+    <string name="own_set_string">Мой набор</string>
+    <string name="add_new_set_string">Добавить новый набор</string>
+    <string name="title_enter_name_set">Введи название для набора слов</string>
+    <string name="title_enter_words">Введите слова</string>
+    <string name="sample_sets_string">Например Мастер</string>
 </resources>
