@@ -8,11 +8,11 @@ import androidx.room.Query
 @Dao
 interface TeamDao {
     @Query("SELECT * FROM list_team")
-    suspend fun getAllTeam(): List<TeamEntity>
+    suspend fun getAllTeamDao(): List<TeamEntity>
 
     @Insert
-    suspend fun saveTeam(teamEntity: TeamEntity)
+    suspend fun saveTeamDao(teamEntity: TeamEntity)
 
     @Delete
-    suspend fun deleteTeam(teamEntity: TeamEntity)
+    suspend fun deleteTeamDao(teamEntity: TeamEntity)
 }
