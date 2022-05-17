@@ -21,6 +21,24 @@
         android:layout_height="match_parent"
         android:layout_margin="16dp">
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/red_planet_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/button_continue"
+            android:layout_marginBottom="110dp"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/alias_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/button_continue"
+            android:layout_marginBottom="15dp"/>
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_rules"
             android:layout_width="match_parent"
