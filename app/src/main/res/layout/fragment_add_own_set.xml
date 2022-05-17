@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/purple_500"
+    android:background="@color/purple_700"
     android:padding="16dp">
 
     <TextView
@@ -78,12 +78,13 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/addNewSet"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:background="@drawable/gradient"
         android:text="@string/add_new_set_string"
         android:textColor="@color/white"
         android:textAllCaps="false"
-        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="57dp"/>
 

@@ -31,4 +31,11 @@
     <string name="title_enter_name_set">Введи название для набора слов</string>
     <string name="title_enter_words">Введите слова</string>
     <string name="sample_sets_string">Например Мастер</string>
+    <string name="team_score_title">Счет команд</string>
+    <string name="start_string">Начать</string>
+    <string name="team_sting">Team</string>
+    <string name="default_zero">0</string>
+    <string name="score_string">очков</string>
+    <string name="default_time">60 секунд</string>
+    <string name="card_preview_text">Нажмите \"Начать\", когда будете готовы</string>
 </resources>

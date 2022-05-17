@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="16dp">
+
+    <TextView
+        android:id="@+id/nameItemTeamScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:hint="@string/team_sting"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/nameItemStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameItemTeamScore"
+        android:hint="@string/team_sting"
+        android:textSize="16sp"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/scoreItemTeamScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:hint="@string/default_zero"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/nameItemStatusScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scoreItemTeamScore"
+        android:text="@string/score_string"
+        android:textSize="16sp"
+        android:textColor="@color/white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

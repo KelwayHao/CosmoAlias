@@ -65,4 +65,14 @@
             android:id="@+id/actionWordSetsFragmentToAddOwnSetFragment"
             app:destination="@id/addOwnSetFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/gamePlayFragment"
+        android:name="com.kelway.cosmoalias.presentation.fragments.GamePlayFragment"
+        android:label="GamePlayFragment"
+        tools:layout ="@layout/fragment_game_play"/>
+    <fragment
+        android:id="@+id/teamScoreFragment"
+        android:name="com.kelway.cosmoalias.presentation.fragments.TeamScoreFragment"
+        android:label="TeamScoreFragment"
+        tools:layout ="@layout/fragment_team_score"/>
 </navigation>

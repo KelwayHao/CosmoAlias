@@ -4,9 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.kelway.cosmoalias.presentation.MainActivity
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.withContext
 
 class CustomSplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
