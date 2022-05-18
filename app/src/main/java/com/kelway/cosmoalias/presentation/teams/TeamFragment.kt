@@ -42,6 +42,8 @@ class TeamFragment: Fragment(R.layout.fragment_team) {
     }
 
     private fun initObserver() {
-        TODO("Not yet implemented")
+        teamViewModel.team.observe(viewLifecycleOwner) { listObserver ->
+            adapter.submitList(listObserver)
+        }
     }
 }
