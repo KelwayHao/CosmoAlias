@@ -8,7 +8,14 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-interface DataModule {
-    @Binds
-    fun bindsTeamRepository(teamRepositoryImpl: TeamRepositoryImpl): TeamRepository
+class DataModule {
+
+    @Provides
+    fun providesTeamRepository(
+        teamDao: TeamDao
+    ): TeamRepository {
+        return TeamRepositoryImpl(teamDao)
+    }
+    /*@Binds
+    fun bindsTeamRepository(teamRepositoryImpl: TeamRepositoryImpl): TeamRepository*/
 }
