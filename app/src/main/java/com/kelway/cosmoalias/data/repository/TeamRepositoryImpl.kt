@@ -5,19 +5,28 @@ import com.kelway.cosmoalias.domain.models.Team
 import com.kelway.cosmoalias.domain.repository.TeamRepository
 import com.kelway.cosmoalias.utils.entityTeamToTeam
 import com.kelway.cosmoalias.utils.teamToTeamEntity
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
-class TeamRepositoryImpl(private val teamDao: TeamDao): TeamRepository {
+class TeamRepositoryImpl(private val teamDao: TeamDao) : TeamRepository {
+
     override suspend fun getAllTeam(): List<Team> {
-        return teamDao.getAllTeamDao().map { teamEntity ->
-            teamEntity.entityTeamToTeam()
+        return withContext(Dispatchers.IO) {
+            return@withContext teamDao.getAllTeamDao().map { teamEntity ->
+                teamEntity.entityTeamToTeam()
+            }
         }
     }
 
     override suspend fun saveTeam(team: Team) {
-        teamDao.saveTeamDao(teamEntity = team.teamToTeamEntity())
+        return withContext(Dispatchers.IO) {
+            teamDao.saveTeamDao(teamEntity = team.teamToTeamEntity())
+        }
     }
 
     override suspend fun deleteTeam(team: Team) {
-        teamDao.deleteTeamDao(teamEntity = team.teamToTeamEntity())
+        return withContext(Dispatchers.IO) {
+            teamDao.deleteTeamDao(teamEntity = team.teamToTeamEntity())
+        }
     }
 }
