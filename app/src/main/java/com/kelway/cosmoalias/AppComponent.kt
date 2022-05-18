@@ -1,12 +1,13 @@
 package com.kelway.cosmoalias
 
 import android.content.Context
+import com.kelway.cosmoalias.data.di.RoomModule
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [])
+@Component(modules = [RoomModule::class, ])
 interface AppComponent {
 
     @Component.Builder

@@ -1,9 +1,11 @@
 package com.kelway.cosmoalias.domain.repository
 
+import com.kelway.cosmoalias.data.room.team_room.TeamEntity
 import com.kelway.cosmoalias.domain.models.Team
+import kotlinx.coroutines.flow.Flow
 
 interface TeamRepository {
-    suspend fun getAllTeam(): List<Team>
+    fun getAllTeam(): Flow<List<TeamEntity>>
 
     suspend fun saveTeam(team: Team)
 
