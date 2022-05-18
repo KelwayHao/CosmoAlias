@@ -6,10 +6,11 @@ import com.kelway.cosmoalias.data.room.AppDatabase
 import com.kelway.cosmoalias.data.room.team_room.TeamDao
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
 
 @Module
 class RoomModule {
-
+    @Singleton
     @Provides
     fun provideAppDatabase(context: Context): AppDatabase {
         return Room.databaseBuilder(

@@ -38,4 +38,7 @@
     <string name="score_string">очков</string>
     <string name="default_time">60 секунд</string>
     <string name="card_preview_text">Нажмите \"Начать\", когда будете готовы</string>
+    <string name="enter_name_team">Введите название команды</string>
+    <string name="create">Создать</string>
+    <string name="cancel">Отмена</string>
 </resources>
