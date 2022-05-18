@@ -5,9 +5,17 @@ import com.kelway.cosmoalias.domain.interactor.TeamInteractorImpl
 import com.kelway.cosmoalias.domain.repository.TeamRepository
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 
 @Module
-interface DomainModule {
-    @Binds
-    fun bindsTeamInteractor(teamInteractorImpl: TeamInteractorImpl): TeamInteractor
+class DomainModule {
+
+    @Provides
+    fun providesTeamInteractor(
+        teamRepository: TeamRepository
+    ): TeamInteractor {
+        return TeamInteractorImpl(teamRepository)
+    }
+   /* @Binds
+    fun bindsTeamInteractor(teamInteractorImpl: TeamInteractorImpl): TeamInteractor*/
 }
