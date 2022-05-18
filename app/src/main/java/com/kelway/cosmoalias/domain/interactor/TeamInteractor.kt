@@ -1,9 +1,10 @@
 package com.kelway.cosmoalias.domain.interactor
 
 import com.kelway.cosmoalias.domain.models.Team
+import kotlinx.coroutines.flow.Flow
 
 interface TeamInteractor {
-    suspend fun getAllTeam(): List<Team>
+    fun getAllTeam(): Flow<List<Team>>
     suspend fun createTeam(team: Team)
     suspend fun deleteTeam(team: Team)
 }
