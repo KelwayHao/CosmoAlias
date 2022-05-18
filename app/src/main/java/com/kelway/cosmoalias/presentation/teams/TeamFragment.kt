@@ -28,7 +28,7 @@ class TeamFragment: Fragment(R.layout.fragment_team) {
 
     private fun testLoadTeamName() {
         adapter.submitList(
-            listOf(Team("Альянс Республики", 0), Team("Войска Империи", 0))
+            listOf(Team(1,"Альянс Республики", 0), Team(2,"Войска Империи", 0))
         )
     }
 }
