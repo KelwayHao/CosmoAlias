@@ -2,7 +2,7 @@ package com.kelway.cosmoalias.data.di
 
 import android.content.Context
 import androidx.room.Room
-import com.kelway.cosmoalias.data.room.AppDatabase
+import com.kelway.cosmoalias.data.room.database.AppDatabase
 import com.kelway.cosmoalias.data.room.team_room.TeamDao
 import dagger.Module
 import dagger.Provides
@@ -20,6 +20,7 @@ class RoomModule {
         ).build()
     }
 
+    @Singleton
     @Provides
     fun provideTeamDao(database: AppDatabase): TeamDao {
         return database.getTeam()

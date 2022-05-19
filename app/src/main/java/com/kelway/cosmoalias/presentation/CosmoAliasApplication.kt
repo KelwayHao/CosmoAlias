@@ -1,6 +1,8 @@
-package com.kelway.cosmoalias
+package com.kelway.cosmoalias.presentation
 
 import android.app.Application
+import com.kelway.cosmoalias.AppComponent
+import com.kelway.cosmoalias.DaggerAppComponent
 
 class CosmoAliasApplication: Application() {
     companion object {
@@ -13,8 +15,7 @@ class CosmoAliasApplication: Application() {
     }
 
     private fun initDagger() {
-        appComponent = DaggerAppComponent
-            .builder()
+        appComponent = DaggerAppComponent.builder()
             .buildContext(this)
             .build()
     }
