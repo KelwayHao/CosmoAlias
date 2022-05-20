@@ -7,15 +7,17 @@ import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.kelway.cosmoalias.R
 import com.kelway.cosmoalias.databinding.FragmentTeamBinding
+import com.kelway.cosmoalias.domain.models.Team
 import com.kelway.cosmoalias.presentation.CosmoAliasApplication
 import com.kelway.cosmoalias.presentation.base.BaseAdapter
 import com.kelway.cosmoalias.utils.dialogInputText
+import com.kelway.cosmoalias.utils.showSnack
 import javax.inject.Inject
 
 class TeamFragment : Fragment(R.layout.fragment_team) {
 
     @Inject
-    lateinit var viewModel: TeamViewModel
+    lateinit var teamViewModel: TeamViewModel
 
     private val binding by viewBinding<FragmentTeamBinding>()
     private val adapter by lazy { BaseAdapter() }
@@ -23,32 +25,44 @@ class TeamFragment : Fragment(R.layout.fragment_team) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         CosmoAliasApplication.appComponent?.inject(this)
+        teamViewModel.clearTable()
+        loadDefaultValue()
         initView()
         initObserver()
-        //testLoadTeamName()
+    }
+
+    private fun loadDefaultValue() {
+        teamViewModel.defaultValue(
+            listOf(
+                Team(1, "Альянс Республики", 0),
+                Team(2, "Войска Империи", 0)
+            )
+        )
     }
 
     private fun initView() {
         binding.recyclerNameTeam.adapter = adapter
-        binding.buttonNextTeam.setOnClickListener {
-            findNavController().navigate(R.id.actionTeamFragmentToWordSetsFragment)
-        }
         binding.buttonEnterNewName.setOnClickListener {
-            dialogInputText("", requireContext(), { inputText ->
-                viewModel.createTeam(inputText.toString())
-            }, {})
+            if (teamViewModel.getSize() < 5) {
+                dialogInputText(requireContext(), { inputText ->
+                    teamViewModel.createTeam(inputText.text.toString())
+                }, {})
+            } else {
+                showSnack(getString(R.string.rules_max_team), requireView())
+            }
+        }
+        binding.buttonNextTeam.setOnClickListener {
+            if (teamViewModel.getSize() >= 2) {
+                findNavController().navigate(R.id.actionTeamFragmentToWordSetsFragment)
+            } else {
+                showSnack(getString(R.string.rules_min_team), requireView())
+            }
         }
     }
 
     private fun initObserver() {
-        viewModel.team.observe(viewLifecycleOwner) { listObserver ->
+        teamViewModel.team.observe(viewLifecycleOwner) { listObserver ->
             adapter.submitList(listObserver)
         }
     }
-
-    /*private fun testLoadTeamName() {
-        adapter.submitList(
-            listOf(Team(1,"Альянс Республики", 0), Team(2,"Войска Империи", 0))
-        )
-    }*/
 }
