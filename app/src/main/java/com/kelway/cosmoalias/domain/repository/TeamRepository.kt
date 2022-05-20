@@ -10,4 +10,6 @@ interface TeamRepository {
     suspend fun saveTeam(team: Team)
 
     suspend fun deleteTeam(team: Team)
+
+    suspend fun clearTable()
 }

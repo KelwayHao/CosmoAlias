@@ -1,7 +1,6 @@
 package com.kelway.cosmoalias.presentation
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.kelway.cosmoalias.R

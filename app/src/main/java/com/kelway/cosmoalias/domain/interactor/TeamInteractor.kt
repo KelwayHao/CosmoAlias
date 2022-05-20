@@ -7,4 +7,5 @@ interface TeamInteractor {
     fun getAllTeam(): Flow<List<Team>>
     suspend fun createTeam(team: Team)
     suspend fun deleteTeam(team: Team)
+    suspend fun clearTable()
 }

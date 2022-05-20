@@ -16,4 +16,7 @@ interface TeamDao {
 
     @Delete
     suspend fun deleteTeamDao(teamEntity: TeamEntity)
+
+    @Query("DELETE FROM list_team")
+    suspend fun clearTable()
 }

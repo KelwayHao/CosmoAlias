@@ -8,8 +8,9 @@ import com.kelway.cosmoalias.utils.teamToTeamEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class TeamRepositoryImpl(private val teamDao: TeamDao) : TeamRepository {
+class TeamRepositoryImpl @Inject constructor(private val teamDao: TeamDao) : TeamRepository {
 
     override fun getAllTeam(): Flow<List<TeamEntity>> {
         return teamDao.getAllTeamDao()
@@ -24,6 +25,12 @@ class TeamRepositoryImpl(private val teamDao: TeamDao) : TeamRepository {
     override suspend fun deleteTeam(team: Team) {
         return withContext(Dispatchers.IO) {
             teamDao.deleteTeamDao(teamEntity = team.teamToTeamEntity())
+        }
+    }
+
+    override suspend fun clearTable() {
+        return withContext(Dispatchers.IO) {
+            teamDao.clearTable()
         }
     }
 }

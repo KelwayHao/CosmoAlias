@@ -5,8 +5,9 @@ import com.kelway.cosmoalias.domain.repository.TeamRepository
 import com.kelway.cosmoalias.utils.entityTeamToTeam
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
 
-class TeamInteractorImpl(private val teamRepository: TeamRepository): TeamInteractor {
+class TeamInteractorImpl @Inject constructor(private val teamRepository: TeamRepository): TeamInteractor {
     override fun getAllTeam(): Flow<List<Team>> {
         return teamRepository.getAllTeam().map { listTeamEntity ->
             listTeamEntity.map { teamEntity ->
@@ -21,5 +22,9 @@ class TeamInteractorImpl(private val teamRepository: TeamRepository): TeamIntera
 
     override suspend fun deleteTeam(team: Team) {
         teamRepository.deleteTeam(team = team)
+    }
+
+    override suspend fun clearTable() {
+        teamRepository.clearTable()
     }
 }

@@ -8,14 +8,8 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-class DomainModule {
+interface DomainModule {
 
-    @Provides
-    fun providesTeamInteractor(
-        teamRepository: TeamRepository
-    ): TeamInteractor {
-        return TeamInteractorImpl(teamRepository)
-    }
-   /* @Binds
-    fun bindsTeamInteractor(teamInteractorImpl: TeamInteractorImpl): TeamInteractor*/
+    @Binds
+    fun bindsTeamInteractor(teamInteractorImpl: TeamInteractorImpl): TeamInteractor
 }

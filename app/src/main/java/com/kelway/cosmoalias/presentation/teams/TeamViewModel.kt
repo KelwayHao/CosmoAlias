@@ -13,10 +13,11 @@ import javax.inject.Inject
 
 class TeamViewModel @Inject constructor(
     private val interactor: TeamInteractor
-): ViewModel() {
+) : ViewModel() {
 
     private val _team = MutableLiveData<List<Team>>()
     val team: LiveData<List<Team>> get() = _team
+    private var sizeList: Int = 0
 
     init {
         loadTeam()
@@ -24,12 +25,11 @@ class TeamViewModel @Inject constructor(
 
     private fun loadTeam() {
         interactor.getAllTeam()
-            .map { listTeam -> _team.postValue(listTeam) }
+            .map { listTeam ->
+                _team.postValue(listTeam)
+                sizeList = listTeam.size
+            }
             .launchIn(viewModelScope)
-    }
-
-    fun updateTeam() {
-        loadTeam()
     }
 
     fun createTeam(nameTeam: String) {
@@ -48,7 +48,23 @@ class TeamViewModel @Inject constructor(
         viewModelScope.launch {
             interactor.deleteTeam(team = team)
         }.invokeOnCompletion {
-            updateTeam()
+            loadTeam()
         }
+    }
+
+    fun defaultValue(list: List<Team>) {
+        list.map { team ->
+            createTeam(team.nameTeam)
+        }
+    }
+
+    fun clearTable() {
+        viewModelScope.launch {
+            interactor.clearTable()
+        }
+    }
+
+    fun getSize(): Int {
+        return sizeList
     }
 }
