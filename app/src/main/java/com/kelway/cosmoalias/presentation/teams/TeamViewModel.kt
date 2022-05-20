@@ -17,8 +17,7 @@ class TeamViewModel @Inject constructor(
 
     private val _team = MutableLiveData<List<Team>>()
     val team: LiveData<List<Team>> get() = _team
-    private var sizeList: Int = 0
-
+    val sizeList get() = team.value?.size ?: 0
     init {
         loadTeam()
     }
@@ -27,7 +26,6 @@ class TeamViewModel @Inject constructor(
         interactor.getAllTeam()
             .map { listTeam ->
                 _team.postValue(listTeam)
-                sizeList = listTeam.size
             }
             .launchIn(viewModelScope)
     }
