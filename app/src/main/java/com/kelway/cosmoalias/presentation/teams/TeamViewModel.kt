@@ -17,7 +17,7 @@ class TeamViewModel @Inject constructor(
 
     private val _team = MutableLiveData<List<Team>>()
     val team: LiveData<List<Team>> get() = _team
-    val sizeList get() = team.value?.size ?: 0
+    private val sizeList get() = team.value?.size ?: 0
     init {
         loadTeam()
     }
