@@ -12,9 +12,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="@string/settings_string"
-        android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -62,34 +62,40 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+        <EditText
+            android:id="@+id/setting_word_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="20dp"
-            android:text="@string/default_count_word"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+        <EditText
+            android:id="@+id/setting_round_length"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="97dp"
             android:layout_marginEnd="20dp"
-            android:text="@string/default_long_round"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+        <EditText
+            android:id="@+id/setting_numbers_laps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="154dp"
             android:layout_marginEnd="20dp"
-            android:text="@string/default_count_around"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
