@@ -7,6 +7,7 @@ import com.kelway.cosmoalias.domain.di.DomainModule
 import com.kelway.cosmoalias.presentation.MainActivity
 import com.kelway.cosmoalias.presentation.fragments.SettingFragment
 import com.kelway.cosmoalias.presentation.teams.TeamFragment
+import com.kelway.cosmoalias.presentation.wordset.WordSetsFragment
 import com.kelway.cosmoalias.utils.di.PreferencesModule
 import dagger.BindsInstance
 import dagger.Component
@@ -20,6 +21,7 @@ interface AppComponent {
     fun inject(target: TeamFragment)
     fun inject(target: MainActivity)
     fun inject(target: SettingFragment)
+    fun inject(target: WordSetsFragment)
 
     @Component.Builder
     interface Builder {

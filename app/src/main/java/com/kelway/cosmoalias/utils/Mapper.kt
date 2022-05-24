@@ -1,7 +1,9 @@
 package com.kelway.cosmoalias.utils
 
 import com.kelway.cosmoalias.data.room.team_room.TeamEntity
+import com.kelway.cosmoalias.data.room.words_set_room.WordsSetEntity
 import com.kelway.cosmoalias.domain.models.Team
+import com.kelway.cosmoalias.domain.models.WordsSet
 
 fun TeamEntity.entityTeamToTeam() =
     Team(
@@ -15,4 +17,20 @@ fun Team.teamToTeamEntity() =
         id = id,
         nameTeam = nameTeam,
         pointTeam = pointTeam
+    )
+
+fun WordsSet.wordsSetToEntity() =
+    WordsSetEntity(
+        id = id,
+        title = title,
+        article = article,
+        listWords = listWords
+    )
+
+fun WordsSetEntity.wordsSetEntityToWordsSet() =
+    WordsSet(
+        id = id,
+        title = title,
+        article = article,
+        listWords = listWords
     )
