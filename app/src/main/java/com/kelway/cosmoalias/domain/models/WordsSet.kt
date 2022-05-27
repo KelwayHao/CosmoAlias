@@ -4,5 +4,5 @@ data class WordsSet(
     val id: Long,
     val title: String,
     val article: String,
-    val listWords: String
+    val listWords: List<String>
 ) : BaseItem()

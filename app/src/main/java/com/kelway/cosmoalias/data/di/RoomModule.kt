@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.kelway.cosmoalias.data.room.database.AppDatabase
 import com.kelway.cosmoalias.data.room.team_room.TeamDao
+import com.kelway.cosmoalias.data.room.words_set_room.WordsSetDao
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -24,6 +25,12 @@ class RoomModule {
     @Provides
     fun provideTeamDao(database: AppDatabase): TeamDao {
         return database.getTeam()
+    }
+
+    @Singleton
+    @Provides
+    fun provideWordSetsDao(database: AppDatabase): WordsSetDao {
+        return database.getWordSets()
     }
 
 }

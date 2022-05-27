@@ -64,6 +64,9 @@
         <action
             android:id="@+id/actionWordSetsFragmentToAddOwnSetFragment"
             app:destination="@id/addOwnSetFragment" />
+        <action
+            android:id="@+id/actionWordSetsFragmentToTeamScoreFragment"
+            app:destination="@id/teamScoreFragment" />
     </fragment>
     <fragment
         android:id="@+id/gamePlayFragment"

@@ -1,4 +1,4 @@
-package com.kelway.cosmoalias.domain.interactor
+package com.kelway.cosmoalias.domain.interactor.team
 
 import com.kelway.cosmoalias.domain.models.Team
 import com.kelway.cosmoalias.domain.repository.TeamRepository
@@ -7,7 +7,8 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
-class TeamInteractorImpl @Inject constructor(private val teamRepository: TeamRepository): TeamInteractor {
+class TeamInteractorImpl @Inject constructor(private val teamRepository: TeamRepository):
+    TeamInteractor {
     override fun getAllTeam(): Flow<List<Team>> {
         return teamRepository.getAllTeam().map { listTeamEntity ->
             listTeamEntity.map { teamEntity ->
