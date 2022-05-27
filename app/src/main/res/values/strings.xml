@@ -44,4 +44,5 @@
     <string name="restrictions_input">Не более 20 символов</string>
     <string name="rules_min_team">Для того, чтобы сыграть игру, необходимо как минимум две команды</string>
     <string name="rules_max_team">Игра расчитана на 5 команд</string>
+    <string name="base_lvl">Базовый уровень</string>
 </resources>

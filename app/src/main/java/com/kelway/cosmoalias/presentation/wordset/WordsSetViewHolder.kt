@@ -2,6 +2,8 @@ package com.kelway.cosmoalias.presentation.wordset
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.kelway.cosmoalias.R
 import com.kelway.cosmoalias.databinding.ItemWordSetBinding
 import com.kelway.cosmoalias.domain.models.BaseItem
@@ -28,7 +30,10 @@ class WordsSetViewHolder(private val binding: ItemWordSetBinding) : BaseViewHold
         (baseItem as WordsSet).apply {
             binding.titleWordSet.text = baseItem.title
             binding.textArticleWordSet.text = baseItem.article
-            binding.titleWordSet.text = baseItem.listWords
+            binding.textCountWordInSet.text = "${baseItem.listWords.size.toString()} слов"
+            binding.buttonEnterWordSet.setOnClickListener {
+                itemView.findNavController().navigate(R.id.actionWordSetsFragmentToTeamScoreFragment)
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.kelway.cosmoalias.domain.interactor
+package com.kelway.cosmoalias.domain.interactor.team
 
 import com.kelway.cosmoalias.domain.models.Team
 import kotlinx.coroutines.flow.Flow

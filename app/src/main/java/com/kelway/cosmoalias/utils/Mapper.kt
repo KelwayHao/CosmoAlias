@@ -24,7 +24,7 @@ fun WordsSet.wordsSetToEntity() =
         id = id,
         title = title,
         article = article,
-        listWords = listWords
+        listWords = listWords.joinToString()
     )
 
 fun WordsSetEntity.wordsSetEntityToWordsSet() =
@@ -32,5 +32,5 @@ fun WordsSetEntity.wordsSetEntityToWordsSet() =
         id = id,
         title = title,
         article = article,
-        listWords = listWords
+        listWords = listWords.split(", ")
     )

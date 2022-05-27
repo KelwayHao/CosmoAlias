@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.kelway.cosmoalias.domain.interactor.words_set.WordsSetInteractor
 import com.kelway.cosmoalias.domain.models.WordsSet
+import com.kelway.cosmoalias.utils.DefaultValue
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch

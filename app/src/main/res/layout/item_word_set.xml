@@ -59,7 +59,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="640 слов"
             android:textColor="@color/purple_700"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/button_enter_word_set"
