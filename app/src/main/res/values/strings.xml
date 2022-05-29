@@ -28,7 +28,7 @@
     <string name="default_count_around">4</string>
     <string name="own_set_string">Мой набор</string>
     <string name="add_new_set_string">Добавить новый набор</string>
-    <string name="title_enter_name_set">Введи название для набора слов</string>
+    <string name="title_enter_name_set">Введите название для набора слов</string>
     <string name="title_enter_words">Введите слова</string>
     <string name="sample_sets_string">Например Мастер</string>
     <string name="team_score_title">Счет команд</string>
@@ -45,4 +45,9 @@
     <string name="rules_min_team">Для того, чтобы сыграть игру, необходимо как минимум две команды</string>
     <string name="rules_max_team">Игра расчитана на 5 команд</string>
     <string name="base_lvl">Базовый уровень</string>
+    <string name="enter_description">Введите описание набора</string>
+    <string name="sample_description_string">Например Набор для Друзей</string>
+    <string name="sample_words_string">Вводите слова через запятую</string>
+    <string name="set_create_message">Новый набор был создан</string>
+    <string name="set_error_message">Заполните все поля</string>
 </resources>

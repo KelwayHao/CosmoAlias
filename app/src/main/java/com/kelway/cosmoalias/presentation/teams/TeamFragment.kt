@@ -22,10 +22,14 @@ class TeamFragment : Fragment(R.layout.fragment_team) {
     private val binding by viewBinding<FragmentTeamBinding>()
     private val adapter by lazy { BaseAdapter() }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         CosmoAliasApplication.appComponent?.inject(this)
         teamViewModel.clearTable()
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         loadDefaultValue()
         initView()
         initObserver()

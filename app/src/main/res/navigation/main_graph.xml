@@ -49,7 +49,7 @@
         tools:layout ="@layout/fragment_setting"/>
     <fragment
         android:id="@+id/addOwnSetFragment"
-        android:name="com.kelway.cosmoalias.presentation.fragments.AddOwnSetFragment"
+        android:name="com.kelway.cosmoalias.presentation.addownset.AddOwnSetFragment"
         android:label="AddOwnSetFragment"
         tools:layout ="@layout/fragment_add_own_set">
         <action
