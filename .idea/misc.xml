@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/CosmoAlias/app/src/main/res/drawable/frame_background.xml" value="0.2765" />
         <entry key="..\:/CosmoAlias/app/src/main/res/drawable/frame_background_transparent.xml" value="0.2455" />
+        <entry key="..\:/CosmoAlias/app/src/main/res/drawable/frame_edittext.xml" value="0.2765" />
         <entry key="..\:/CosmoAlias/app/src/main/res/drawable/gradient.xml" value="0.2785" />
         <entry key="..\:/CosmoAlias/app/src/main/res/drawable/gradient_circle.xml" value="0.2785" />
         <entry key="..\:/CosmoAlias/app/src/main/res/drawable/splash_screen.xml" value="0.27" />
