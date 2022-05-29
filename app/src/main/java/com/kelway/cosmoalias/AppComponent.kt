@@ -5,6 +5,7 @@ import com.kelway.cosmoalias.data.di.DataModule
 import com.kelway.cosmoalias.data.di.RoomModule
 import com.kelway.cosmoalias.domain.di.DomainModule
 import com.kelway.cosmoalias.presentation.MainActivity
+import com.kelway.cosmoalias.presentation.addownset.AddOwnSetFragment
 import com.kelway.cosmoalias.presentation.fragments.SettingFragment
 import com.kelway.cosmoalias.presentation.teams.TeamFragment
 import com.kelway.cosmoalias.presentation.wordset.WordSetsFragment
@@ -22,6 +23,7 @@ interface AppComponent {
     fun inject(target: MainActivity)
     fun inject(target: SettingFragment)
     fun inject(target: WordSetsFragment)
+    fun inject(target: AddOwnSetFragment)
 
     @Component.Builder
     interface Builder {

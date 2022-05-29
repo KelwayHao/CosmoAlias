@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/purple_700"
     android:padding="16dp">
 
@@ -21,57 +21,94 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@drawable/frame_background"
-        app:layout_constraintTop_toBottomOf="@+id/textViewHeadTitleOwnSet"
-        app:layout_constraintBottom_toTopOf="@+id/addNewSet"
         android:layout_marginVertical="24dp"
-        android:padding="16dp">
-        
+        android:background="@drawable/frame_background"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/addNewSet"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHeadTitleOwnSet">
+
         <TextView
             android:id="@+id/titleEnterNameSet"
-            android:layout_marginTop="24dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp"
             android:text="@string/title_enter_name_set"
-            android:textSize="18sp"
             android:textColor="@color/purple_700"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/fieldNameSet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="16dp"
+            android:background="@drawable/frame_edittext"
             android:hint="@string/sample_sets_string"
+            android:imeOptions="actionNext"
+            android:padding="12dp"
+            android:singleLine="true"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleEnterNameSet"/>
+            app:layout_constraintTop_toBottomOf="@+id/titleEnterNameSet" />
+
+        <TextView
+            android:id="@+id/titleEnterDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/enter_description"
+            android:textColor="@color/purple_700"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fieldNameSet" />
+
+        <EditText
+            android:id="@+id/fieldDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/frame_edittext"
+            android:hint="@string/sample_description_string"
+            android:imeOptions="actionNext"
+            android:padding="12dp"
+            android:singleLine="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleEnterDescription" />
 
         <TextView
             android:id="@+id/titleEnterWords"
-            android:layout_marginTop="24dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp"
             android:text="@string/title_enter_words"
+            android:textColor="@color/purple_700"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="@color/purple_700"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fieldNameSet" />
+            app:layout_constraintTop_toBottomOf="@+id/fieldDescription" />
 
         <EditText
             android:id="@+id/fieldWords"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="16dp"
+            android:background="@drawable/frame_edittext"
+            android:gravity="top"
+            android:hint="@string/sample_words_string"
+            android:imeOptions="actionDone"
+            android:padding="12dp"
+            android:inputType="textImeMultiLine"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleEnterWords"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@+id/titleEnterWords" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -79,13 +116,13 @@
         android:id="@+id/addNewSet"
         android:layout_width="match_parent"
         android:layout_height="70dp"
+        android:layout_marginBottom="57dp"
         android:background="@drawable/gradient"
         android:text="@string/add_new_set_string"
-        android:textColor="@color/white"
         android:textAllCaps="false"
-        android:textStyle="bold"
+        android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="57dp"/>
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
