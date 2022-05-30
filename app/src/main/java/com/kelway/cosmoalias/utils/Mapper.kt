@@ -3,6 +3,7 @@ package com.kelway.cosmoalias.utils
 import com.kelway.cosmoalias.data.room.team_room.TeamEntity
 import com.kelway.cosmoalias.data.room.words_set_room.WordsSetEntity
 import com.kelway.cosmoalias.domain.models.Team
+import com.kelway.cosmoalias.domain.models.TeamScore
 import com.kelway.cosmoalias.domain.models.WordsSet
 
 fun TeamEntity.entityTeamToTeam() =
@@ -33,4 +34,19 @@ fun WordsSetEntity.wordsSetEntityToWordsSet() =
         title = title,
         article = article,
         listWords = listWords.split(", ")
+    )
+
+fun TeamEntity.entityTeamToTeamScore() =
+    TeamScore(
+        id = id,
+        nameTeam = nameTeam,
+        pointTeam = pointTeam,
+        status = false
+    )
+
+fun TeamScore.teamScoreToTeamEntity() =
+    TeamEntity(
+        id = id,
+        nameTeam = nameTeam,
+        pointTeam = pointTeam
     )

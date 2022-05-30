@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/backgroundImageTeamScore"
@@ -27,22 +27,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:textStyle="bold"
             android:text="@string/team_score_title"
             android:textColor="@color/white"
             android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            app:layout_constraintTop_toBottomOf="@id/textViewHeadTitleTeamScore"
-            android:layout_marginTop="24dp"
+            android:id="@+id/recyclerTeamScore"
             android:layout_width="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:layout_height="400dp"
+            android:layout_marginTop="24dp"
             android:background="@drawable/frame_background_transparent"
             android:padding="24dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/textViewHeadTitleTeamScore"
             tools:itemCount="11"
             tools:listitem="@layout/item_team_score" />
 

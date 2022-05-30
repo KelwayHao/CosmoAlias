@@ -5,11 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.kelway.cosmoalias.domain.models.BaseItem
 import com.kelway.cosmoalias.domain.models.Team
+import com.kelway.cosmoalias.domain.models.TeamScore
 import com.kelway.cosmoalias.domain.models.WordsSet
+import com.kelway.cosmoalias.presentation.team_score.TeamScoreViewHolder
 import com.kelway.cosmoalias.presentation.teams.TeamViewHolder
 import com.kelway.cosmoalias.presentation.wordset.WordsSetViewHolder
 
-class BaseAdapter(): RecyclerView.Adapter<BaseViewHolder>() {
+class BaseAdapter() : RecyclerView.Adapter<BaseViewHolder>() {
 
     private var items: List<BaseItem> = emptyList()
 
@@ -17,6 +19,7 @@ class BaseAdapter(): RecyclerView.Adapter<BaseViewHolder>() {
         return when (viewType) {
             TeamViewHolder.VIEW_TYPE -> TeamViewHolder.newInstance(parent)
             WordsSetViewHolder.VIEW_TYPE -> WordsSetViewHolder.newInstance(parent)
+            TeamScoreViewHolder.VIEW_TYPE -> TeamScoreViewHolder.newInstance(parent)
             else -> throw IllegalStateException("Wrong view holder type")
         }
     }
@@ -29,6 +32,7 @@ class BaseAdapter(): RecyclerView.Adapter<BaseViewHolder>() {
         return when (items[position]) {
             is Team -> TeamViewHolder.VIEW_TYPE
             is WordsSet -> WordsSetViewHolder.VIEW_TYPE
+            is TeamScore -> TeamScoreViewHolder.VIEW_TYPE
             else -> throw IllegalStateException("Wrong view view type")
         }
     }

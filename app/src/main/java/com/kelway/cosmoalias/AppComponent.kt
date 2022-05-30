@@ -7,16 +7,17 @@ import com.kelway.cosmoalias.domain.di.DomainModule
 import com.kelway.cosmoalias.presentation.MainActivity
 import com.kelway.cosmoalias.presentation.addownset.AddOwnSetFragment
 import com.kelway.cosmoalias.presentation.fragments.SettingFragment
+import com.kelway.cosmoalias.presentation.team_score.TeamScoreFragment
 import com.kelway.cosmoalias.presentation.teams.TeamFragment
 import com.kelway.cosmoalias.presentation.wordset.WordSetsFragment
-import com.kelway.cosmoalias.utils.di.PreferencesModule
+import com.kelway.cosmoalias.utils.di.UtilsModule
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
 @Component(
-    modules = [RoomModule::class, DataModule::class, DomainModule::class, PreferencesModule::class]
+    modules = [RoomModule::class, DataModule::class, DomainModule::class, UtilsModule::class]
 )
 interface AppComponent {
     fun inject(target: TeamFragment)
@@ -24,6 +25,7 @@ interface AppComponent {
     fun inject(target: SettingFragment)
     fun inject(target: WordSetsFragment)
     fun inject(target: AddOwnSetFragment)
+    fun inject(target: TeamScoreFragment)
 
     @Component.Builder
     interface Builder {

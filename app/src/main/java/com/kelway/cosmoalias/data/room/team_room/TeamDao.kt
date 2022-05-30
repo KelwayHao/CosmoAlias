@@ -1,9 +1,6 @@
 package com.kelway.cosmoalias.data.room.team_room
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -16,6 +13,9 @@ interface TeamDao {
 
     @Delete
     suspend fun deleteTeamDao(teamEntity: TeamEntity)
+
+    @Update
+    suspend fun updateTeamDao(teamEntity: TeamEntity)
 
     @Query("DELETE FROM list_team")
     suspend fun clearTable()

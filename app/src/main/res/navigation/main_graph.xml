@@ -75,7 +75,11 @@
         tools:layout ="@layout/fragment_game_play"/>
     <fragment
         android:id="@+id/teamScoreFragment"
-        android:name="com.kelway.cosmoalias.presentation.fragments.TeamScoreFragment"
+        android:name="com.kelway.cosmoalias.presentation.team_score.TeamScoreFragment"
         android:label="TeamScoreFragment"
-        tools:layout ="@layout/fragment_team_score"/>
+        tools:layout ="@layout/fragment_team_score">
+        <action
+            android:id="@+id/actionTeamScoreFragmentToGamePlayFragment"
+            app:destination="@id/gamePlayFragment" />
+    </fragment>
 </navigation>

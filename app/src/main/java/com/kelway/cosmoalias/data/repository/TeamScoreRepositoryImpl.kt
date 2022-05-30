@@ -1,0 +1,25 @@
+package com.kelway.cosmoalias.data.repository
+
+import com.kelway.cosmoalias.data.room.team_room.TeamDao
+import com.kelway.cosmoalias.data.room.team_room.TeamEntity
+import com.kelway.cosmoalias.domain.models.TeamScore
+import com.kelway.cosmoalias.domain.repository.TeamScoreRepository
+import com.kelway.cosmoalias.utils.teamScoreToTeamEntity
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.withContext
+import javax.inject.Inject
+
+class TeamScoreRepositoryImpl @Inject constructor(private val teamDao: TeamDao) :
+    TeamScoreRepository {
+
+    override fun getAllTeamScore(): Flow<List<TeamEntity>> {
+        return teamDao.getAllTeamDao()
+    }
+
+    override suspend fun updateTeamScore(teamScore: TeamScore) {
+        return withContext(Dispatchers.IO) {
+            teamDao.updateTeamDao(teamScore.teamScoreToTeamEntity())
+        }
+    }
+}
