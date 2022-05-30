@@ -11,5 +11,7 @@ data class TeamEntity(
     @ColumnInfo(name = "name_team")
     val nameTeam: String,
     @ColumnInfo(name = "point_team")
-    val pointTeam: Int
+    val pointTeam: Int,
+    @ColumnInfo(name = "status_team")
+    val statusTeam: Boolean = false
 )
