@@ -41,12 +41,13 @@ fun TeamEntity.entityTeamToTeamScore() =
         id = id,
         nameTeam = nameTeam,
         pointTeam = pointTeam,
-        status = false
+        status = statusTeam
     )
 
 fun TeamScore.teamScoreToTeamEntity() =
     TeamEntity(
         id = id,
         nameTeam = nameTeam,
-        pointTeam = pointTeam
+        pointTeam = pointTeam,
+        statusTeam = status
     )
