@@ -4,6 +4,8 @@ import com.kelway.cosmoalias.utils.preference.SharedPreferencesManager
 import com.kelway.cosmoalias.utils.preference.SharedPreferencesManagerImpl
 import com.kelway.cosmoalias.utils.resource_provider.ResourceProvider
 import com.kelway.cosmoalias.utils.resource_provider.ResourceProviderImpl
+import com.kelway.cosmoalias.utils.timer.TimerImpl
+import com.kelway.cosmoalias.utils.timer.TimerInteractor
 import dagger.Binds
 import dagger.Module
 
@@ -15,4 +17,7 @@ interface UtilsModule {
 
     @Binds
     fun bindsResourceProvider(resourceProviderImpl: ResourceProviderImpl): ResourceProvider
+
+    @Binds
+    fun bindTimeTimer(timerImpl: TimerImpl): TimerInteractor
 }

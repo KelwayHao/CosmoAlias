@@ -22,6 +22,10 @@ class TeamScoreFragment : Fragment(R.layout.fragment_team_score) {
         super.onViewCreated(view, savedInstanceState)
         CosmoAliasApplication.appComponent?.inject(this)
         initView()
+    }
+
+    override fun onStart() {
+        super.onStart()
         initObserver()
     }
 

@@ -70,7 +70,7 @@
     </fragment>
     <fragment
         android:id="@+id/gamePlayFragment"
-        android:name="com.kelway.cosmoalias.presentation.fragments.GamePlayFragment"
+        android:name="com.kelway.cosmoalias.presentation.game_play.GamePlayFragment"
         android:label="GamePlayFragment"
         tools:layout ="@layout/fragment_game_play"/>
     <fragment

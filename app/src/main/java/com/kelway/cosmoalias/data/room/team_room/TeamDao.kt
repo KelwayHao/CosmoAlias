@@ -8,6 +8,9 @@ interface TeamDao {
     @Query("SELECT * FROM list_team")
     fun getAllTeamDao(): Flow<List<TeamEntity>>
 
+    @Query("SELECT * FROM list_team")
+    suspend fun getAllTeamDaoSuspend(): List<TeamEntity>
+
     @Insert
     suspend fun saveTeamDao(teamEntity: TeamEntity)
 
