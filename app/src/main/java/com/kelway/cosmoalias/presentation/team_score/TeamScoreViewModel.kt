@@ -17,28 +17,30 @@ class TeamScoreViewModel @Inject constructor(private val interactor: TeamScoreIn
     private val _team = MutableLiveData<List<TeamScore>>()
     val team: LiveData<List<TeamScore>> get() = _team
 
-    private val numberTeam get() = _team.value?.size ?: 0
-    private val listTeam get() = _team
-
     init {
-        loadTeam()
+        dataReset()
+    }
+
+    private fun dataReset() {
+        viewModelScope.launch {
+            interactor.getAllTeamScore().map { teamScore ->
+                teamScore.status = false
+                updateTeamScore(teamScore)
+            }
+        }.invokeOnCompletion {
+            loadTeam()
+        }
     }
 
     private fun loadTeam() {
-        interactor.getAllTeamScore().map { listTeamScore ->
-            /*val randomValue = (listTeamScore.indices).random()
+        viewModelScope.launch {
+            val listTeamScore = interactor.getAllTeamScore()
+            val randomValue = (listTeamScore.indices).random()
             listTeamScore[randomValue].status = true
-            updateTeamScore(listTeamScore[randomValue])*/
+            updateTeamScore(listTeamScore[randomValue])
             _team.postValue(listTeamScore)
-        }.launchIn(viewModelScope)
+        }
     }
-
-    /*private fun teamRandom(): LiveData<List<TeamScore>> {
-        val randomValue = (listTeam.value.).random()
-        listTeam.value!![randomValue].status = true
-        updateTeamScore(listTeam.value!![randomValue])
-        return listTeam
-    }*/
 
     private fun updateTeamScore(teamScore: TeamScore) {
         viewModelScope.launch {

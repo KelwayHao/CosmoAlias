@@ -8,6 +8,7 @@ import com.kelway.cosmoalias.R
 import com.kelway.cosmoalias.databinding.FragmentSettingBinding
 import com.kelway.cosmoalias.presentation.CosmoAliasApplication
 import com.kelway.cosmoalias.utils.preference.SharedPreferencesManager
+import com.kelway.cosmoalias.utils.showSnack
 import javax.inject.Inject
 
 const val WORD_COUNT = "WORD_COUNT"
@@ -35,6 +36,7 @@ class SettingFragment : Fragment(R.layout.fragment_setting) {
             sharedPreferencesManager.save(WORD_COUNT, binding.settingWordCount.text.toString())
             sharedPreferencesManager.save(ROUND_LENGTH, binding.settingRoundLength.text.toString())
             sharedPreferencesManager.save(NUMBERS_LAPS, binding.settingNumbersLaps.text.toString())
+            showSnack(getString(R.string.setting_save), requireView())
         }
     }
 }
