@@ -43,7 +43,7 @@ class TeamScoreViewModel @Inject constructor(private val interactor: TeamScoreIn
 
     private fun loadTeam() {
         CosmoAliasApplication.appComponent?.inject(this)
-        val countLaps = sharedPreferencesManager.getInt("countLaps", 1)
+        val countLaps = sharedPreferencesManager.getInt(Constants.COUNT_LAPS, 1)
         val numberLapsGame = sharedPreferencesManager.getInt(Constants.NUMBERS_LAPS, 1)
 
         viewModelScope.launch {
@@ -53,8 +53,7 @@ class TeamScoreViewModel @Inject constructor(private val interactor: TeamScoreIn
             }
             if (filterList.isEmpty()) {
                 if(countLaps < numberLapsGame) {
-                    Log.e("Круг", "c:$countLaps  n:$numberLapsGame")
-                    sharedPreferencesManager.saveInt("countLaps", countLaps + 1)
+                    sharedPreferencesManager.saveInt(Constants.COUNT_LAPS, countLaps + 1)
                     dataReset()
                 } else {
                     endGame.actionEndRounds()

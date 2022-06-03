@@ -37,7 +37,7 @@ class WordsSetViewHolder(private val binding: ItemWordSetBinding) : RecyclerView
             binding.textCountWordInSet.text = "${listWords.size.toString()} слов"
             binding.buttonEnterWordSet.setOnClickListener {
                 sharedPreferencesManager.save(Constants.SELECTED_SET, id.toString())
-                sharedPreferencesManager.saveInt("countLaps", 1)
+                sharedPreferencesManager.saveInt(Constants.COUNT_LAPS, 1)
                 itemView.findNavController().navigate(R.id.actionWordSetsFragmentToTeamScoreFragment)
             }
         }
