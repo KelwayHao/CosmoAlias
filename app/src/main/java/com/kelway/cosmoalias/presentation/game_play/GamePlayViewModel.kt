@@ -8,6 +8,7 @@ import com.kelway.cosmoalias.domain.interactor.teamscore.TeamScoreInteractor
 import com.kelway.cosmoalias.domain.interactor.words_set.WordsSetInteractor
 import com.kelway.cosmoalias.domain.models.TeamScore
 import com.kelway.cosmoalias.domain.models.WordsSet
+import com.kelway.cosmoalias.presentation.StatusTeam
 import com.kelway.cosmoalias.presentation.listener.ListenerTimerStopped
 import com.kelway.cosmoalias.utils.timer.TimerInteractor
 import kotlinx.coroutines.flow.launchIn
@@ -39,7 +40,7 @@ class GamePlayViewModel @Inject constructor(
     private fun loadTeam() {
         viewModelScope.launch {
             interactorTeamScore.getAllTeamScore().map { teamScore ->
-                if (teamScore.status) {
+                if (teamScore.status.action == StatusTeam.PLAYS.action) {
                     currentTeamScore = teamScore
                     _team.postValue(teamScore)
                 }
@@ -54,7 +55,7 @@ class GamePlayViewModel @Inject constructor(
                     id = currentTeamScore.id,
                     nameTeam = currentTeamScore.nameTeam,
                     pointTeam = point,
-                    status = false
+                    status = StatusTeam.PLAYED
                 )
             )
         }

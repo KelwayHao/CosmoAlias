@@ -51,7 +51,8 @@
     <string name="set_create_message">Новый набор был создан</string>
     <string name="set_error_message">Заполните все поля</string>
     <string name="plays_status">Играет</string>
-    <string name="waiting_status">Ожидает</string>
+    <string name="awaiting_status">Ожидает</string>
+    <string name="played_status">Играл</string>
     <string name="seconds_left">%1$s\nсекунд</string>
     <string name="setting_save">Настройки сохранены</string>
 </resources>

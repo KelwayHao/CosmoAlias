@@ -6,10 +6,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kelway.cosmoalias.R
 import com.kelway.cosmoalias.databinding.ItemTeamScoreBinding
 import com.kelway.cosmoalias.domain.models.TeamScore
+import com.kelway.cosmoalias.presentation.CosmoAliasApplication
+import com.kelway.cosmoalias.utils.resource_provider.ResourceProvider
 import javax.inject.Inject
 
 class TeamScoreViewHolder @Inject constructor(private var binding: ItemTeamScoreBinding) :
     RecyclerView.ViewHolder(binding.root) {
+
+    @Inject
+    lateinit var resourceProvider: ResourceProvider
+
     companion object {
         fun newInstance(parent: ViewGroup) = TeamScoreViewHolder(
             ItemTeamScoreBinding.bind(
@@ -24,14 +30,11 @@ class TeamScoreViewHolder @Inject constructor(private var binding: ItemTeamScore
     }
 
     fun bindItem(teamScore: TeamScore) {
+        CosmoAliasApplication.appComponent?.inject(this)
         with(teamScore) {
             binding.nameItemTeamScore.text = nameTeam
             binding.scoreItemTeamScore.text = pointTeam.toString()
-            binding.nameItemStatus.text = if (status) {
-                binding.root.context.getString(R.string.plays_status)
-            } else {
-                binding.root.context.getString(R.string.waiting_status)
-            }
+            binding.nameItemStatus.text = resourceProvider.getString(status.action)
         }
     }
 }

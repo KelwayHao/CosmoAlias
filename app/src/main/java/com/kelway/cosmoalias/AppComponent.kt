@@ -10,6 +10,8 @@ import com.kelway.cosmoalias.presentation.fragments.MainMenuFragment
 import com.kelway.cosmoalias.presentation.fragments.SettingFragment
 import com.kelway.cosmoalias.presentation.game_play.GamePlayFragment
 import com.kelway.cosmoalias.presentation.team_score.TeamScoreFragment
+import com.kelway.cosmoalias.presentation.team_score.TeamScoreViewHolder
+import com.kelway.cosmoalias.presentation.team_score.TeamScoreViewModel
 import com.kelway.cosmoalias.presentation.teams.TeamFragment
 import com.kelway.cosmoalias.presentation.wordset.WordSetsFragment
 import com.kelway.cosmoalias.presentation.wordset.WordsSetViewHolder
@@ -32,6 +34,8 @@ interface AppComponent {
     fun inject(target: GamePlayFragment)
     fun inject(target: WordsSetViewHolder)
     fun inject(target: MainMenuFragment)
+    fun inject(target: TeamScoreViewHolder)
+    fun inject(target: TeamScoreViewModel)
 
     @Component.Builder
     interface Builder {
