@@ -30,4 +30,14 @@ class SharedPreferencesManagerImpl @Inject constructor(private val context: Cont
     override fun getBoolean(key: String, defaultValue: Boolean): Boolean {
         return preferences.getBoolean(key, defaultValue)
     }
+
+    override fun saveInt(key: String, value: Int) {
+        preferences.edit()
+            .putInt(key, value)
+            .apply()
+    }
+
+    override fun getInt(key: String, defaultValue: Int): Int {
+        return preferences.getInt(key, defaultValue)
+    }
 }

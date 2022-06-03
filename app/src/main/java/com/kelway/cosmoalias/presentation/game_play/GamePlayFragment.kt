@@ -7,7 +7,6 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.kelway.cosmoalias.R
 import com.kelway.cosmoalias.databinding.FragmentGamePlayBinding
 import com.kelway.cosmoalias.presentation.CosmoAliasApplication
-import com.kelway.cosmoalias.presentation.fragments.ROUND_LENGTH
 import com.kelway.cosmoalias.presentation.listener.ListenerTimerStopped
 import com.kelway.cosmoalias.utils.Constants
 import com.kelway.cosmoalias.utils.preference.SharedPreferencesManager
@@ -35,7 +34,7 @@ class GamePlayFragment : Fragment(R.layout.fragment_game_play) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         CosmoAliasApplication.appComponent?.inject(this)
-        val timeRound = sharedPreferencesManager.getPref(ROUND_LENGTH, "60")
+        val timeRound = sharedPreferencesManager.getPref(Constants.ROUND_LENGTH, "60")
         binding.textViewHeadTitleTimeRound.text = getString(R.string.seconds_left, timeRound)
         binding.buttonStartPlayGame.setOnClickListener {
             binding.buttonStartPlayGame.visibility = View.INVISIBLE
@@ -70,16 +69,18 @@ class GamePlayFragment : Fragment(R.layout.fragment_game_play) {
         }
     }
 
+
     private fun displayWord(listWord: List<String>) {
         binding.fieldGameWord.text = listWord.random()
     }
 
     private fun positiveAnswer(listWord: List<String>) {
-        point++
+        point += Constants.REWARD_TRUE_ANSWER
         displayWord(listWord)
     }
 
     private fun negativeAnswer(listWord: List<String>) {
+        point -= Constants.PENALTY_FALSE_ANSWER
         displayWord(listWord)
     }
 }

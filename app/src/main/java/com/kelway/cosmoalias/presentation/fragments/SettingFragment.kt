@@ -7,13 +7,12 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.kelway.cosmoalias.R
 import com.kelway.cosmoalias.databinding.FragmentSettingBinding
 import com.kelway.cosmoalias.presentation.CosmoAliasApplication
+import com.kelway.cosmoalias.utils.Constants.Companion.NUMBERS_LAPS
+import com.kelway.cosmoalias.utils.Constants.Companion.ROUND_LENGTH
+import com.kelway.cosmoalias.utils.Constants.Companion.WORD_COUNT
 import com.kelway.cosmoalias.utils.preference.SharedPreferencesManager
 import com.kelway.cosmoalias.utils.showSnack
 import javax.inject.Inject
-
-const val WORD_COUNT = "WORD_COUNT"
-const val ROUND_LENGTH = "ROUND_LENGTH"
-const val NUMBERS_LAPS = "NUMBERS_LAPS"
 
 class SettingFragment : Fragment(R.layout.fragment_setting) {
     private val binding by viewBinding<FragmentSettingBinding>()
@@ -30,12 +29,12 @@ class SettingFragment : Fragment(R.layout.fragment_setting) {
     private fun initView() {
         binding.settingWordCount.setText(sharedPreferencesManager.getPref(WORD_COUNT, "120"))
         binding.settingRoundLength.setText(sharedPreferencesManager.getPref(ROUND_LENGTH, "60"))
-        binding.settingNumbersLaps.setText(sharedPreferencesManager.getPref(NUMBERS_LAPS, "4"))
+        binding.settingNumbersLaps.setText(sharedPreferencesManager.getInt(NUMBERS_LAPS, 4).toString())
 
         binding.buttonSaveSettings.setOnClickListener {
             sharedPreferencesManager.save(WORD_COUNT, binding.settingWordCount.text.toString())
             sharedPreferencesManager.save(ROUND_LENGTH, binding.settingRoundLength.text.toString())
-            sharedPreferencesManager.save(NUMBERS_LAPS, binding.settingNumbersLaps.text.toString())
+            sharedPreferencesManager.saveInt(NUMBERS_LAPS, binding.settingNumbersLaps.text.toString().toInt())
             showSnack(getString(R.string.setting_save), requireView())
         }
     }
