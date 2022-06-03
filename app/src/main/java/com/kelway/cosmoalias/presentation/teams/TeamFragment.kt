@@ -8,7 +8,6 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.kelway.cosmoalias.R
 import com.kelway.cosmoalias.databinding.FragmentTeamBinding
 import com.kelway.cosmoalias.presentation.CosmoAliasApplication
-import com.kelway.cosmoalias.presentation.base.BaseAdapter
 import com.kelway.cosmoalias.utils.DefaultValue
 import com.kelway.cosmoalias.utils.dialogInputText
 import com.kelway.cosmoalias.utils.preference.SharedPreferencesManager
@@ -19,10 +18,11 @@ class TeamFragment : Fragment(R.layout.fragment_team) {
 
     @Inject
     lateinit var teamViewModel: TeamViewModel
+
     @Inject
     lateinit var sharedPreferencesManager: SharedPreferencesManager
     private val binding by viewBinding<FragmentTeamBinding>()
-    private val adapter by lazy { BaseAdapter() }
+    private val adapter by lazy { TeamAdapter() }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +33,10 @@ class TeamFragment : Fragment(R.layout.fragment_team) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        loadDefaultValue()
+        if (sharedPreferencesManager.getBoolean("loadDefaultValueTeam", true)) {
+            loadDefaultValue()
+            sharedPreferencesManager.saveBoolean("loadDefaultValueTeam", false)
+        }
         initView()
         initObserver()
     }
@@ -60,7 +63,7 @@ class TeamFragment : Fragment(R.layout.fragment_team) {
 
     private fun initObserver() {
         teamViewModel.team.observe(viewLifecycleOwner) { listObserver ->
-            adapter.submitList(listObserver)
+            adapter.submitItem(listObserver)
         }
     }
 

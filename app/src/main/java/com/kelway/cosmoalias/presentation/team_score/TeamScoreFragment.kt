@@ -8,7 +8,6 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.kelway.cosmoalias.R
 import com.kelway.cosmoalias.databinding.FragmentTeamScoreBinding
 import com.kelway.cosmoalias.presentation.CosmoAliasApplication
-import com.kelway.cosmoalias.presentation.base.BaseAdapter
 import javax.inject.Inject
 
 class TeamScoreFragment : Fragment(R.layout.fragment_team_score) {
@@ -16,7 +15,7 @@ class TeamScoreFragment : Fragment(R.layout.fragment_team_score) {
     @Inject
     lateinit var teamScoreViewModel: TeamScoreViewModel
     private val binding by viewBinding<FragmentTeamScoreBinding>()
-    private val adapter by lazy { BaseAdapter() }
+    private val adapter by lazy { TeamScoreAdapter() }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -38,7 +37,7 @@ class TeamScoreFragment : Fragment(R.layout.fragment_team_score) {
 
     private fun initObserver() {
         teamScoreViewModel.team.observe(viewLifecycleOwner) { listTeamScore ->
-            adapter.submitList(listTeamScore)
+            adapter.submitItem(listTeamScore)
         }
     }
 }

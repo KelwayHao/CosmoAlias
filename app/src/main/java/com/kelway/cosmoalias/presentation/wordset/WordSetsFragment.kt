@@ -8,7 +8,6 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.kelway.cosmoalias.R
 import com.kelway.cosmoalias.databinding.FragmentWordSetsBinding
 import com.kelway.cosmoalias.presentation.CosmoAliasApplication
-import com.kelway.cosmoalias.presentation.base.BaseAdapter
 import com.kelway.cosmoalias.utils.DefaultValue
 import com.kelway.cosmoalias.utils.preference.SharedPreferencesManager
 import javax.inject.Inject
@@ -23,7 +22,7 @@ class WordSetsFragment : Fragment(R.layout.fragment_word_sets) {
     lateinit var sharedPreferencesManager: SharedPreferencesManager
 
     private val binding by viewBinding<FragmentWordSetsBinding>()
-    private val adapter by lazy { BaseAdapter() }
+    private val adapter by lazy { WordSetsAdapter() }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -46,7 +45,7 @@ class WordSetsFragment : Fragment(R.layout.fragment_word_sets) {
 
     private fun initObserver() {
         wordsSetViewModel.wordSets.observe(viewLifecycleOwner) { listObserver ->
-            adapter.submitList(listObserver)
+            adapter.submitItem(listObserver)
         }
     }
 

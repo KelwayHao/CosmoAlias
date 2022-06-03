@@ -6,9 +6,9 @@ import androidx.fragment.app.Fragment
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.kelway.cosmoalias.R
 import com.kelway.cosmoalias.databinding.FragmentGamePlayBinding
-import com.kelway.cosmoalias.domain.models.WordsSet
 import com.kelway.cosmoalias.presentation.CosmoAliasApplication
 import com.kelway.cosmoalias.presentation.fragments.ROUND_LENGTH
+import com.kelway.cosmoalias.presentation.listener.ListenerTimerStopped
 import com.kelway.cosmoalias.utils.Constants
 import com.kelway.cosmoalias.utils.preference.SharedPreferencesManager
 import javax.inject.Inject
@@ -17,10 +17,20 @@ class GamePlayFragment : Fragment(R.layout.fragment_game_play) {
 
     @Inject
     lateinit var gamePlayViewModel: GamePlayViewModel
+
     @Inject
     lateinit var sharedPreferencesManager: SharedPreferencesManager
     private val binding by viewBinding<FragmentGamePlayBinding>()
 
+    private var point: Int = 0
+
+    private val timerStopped = object : ListenerTimerStopped {
+        override fun actionTimerStopped() {
+            gamePlayViewModel.updateTeamScore(point)
+            requireActivity().onBackPressed()
+
+        }
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -36,8 +46,13 @@ class GamePlayFragment : Fragment(R.layout.fragment_game_play) {
     }
 
     private fun startGame(timeRound: String) {
-        gamePlayViewModel.startTimer(timeRound.toLong())
-        gamePlayViewModel.loadWordSets(sharedPreferencesManager.getPref(Constants.SELECTED_SET, "0").toLong())
+        gamePlayViewModel.team.observe(viewLifecycleOwner) { teamScore ->
+            point = teamScore.pointTeam
+        }
+        gamePlayViewModel.loadWordSets(
+            sharedPreferencesManager.getPref(Constants.SELECTED_SET, "0").toLong()
+        )
+        gamePlayViewModel.startTimer(timeRound.toLong(), timerStopped)
         gamePlayViewModel.wordSets.observe(viewLifecycleOwner) { listWordsSet ->
             displayWord(listWordsSet.first().listWords)
 
@@ -60,6 +75,7 @@ class GamePlayFragment : Fragment(R.layout.fragment_game_play) {
     }
 
     private fun positiveAnswer(listWord: List<String>) {
+        point++
         displayWord(listWord)
     }
 
