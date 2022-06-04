@@ -55,4 +55,12 @@
     <string name="played_status">Играл</string>
     <string name="seconds_left">%1$s\nсекунд</string>
     <string name="setting_save">Настройки сохранены</string>
+    <string name="btn_ok">Окей!</string>
+    <string name="congratulation_string">Победа!</string>
+    <string name="team_string">Команда</string>
+    <string name="win_galaxy_cup">выигрывает Галактический кубок</string>
+    <string name="point_string">очков</string>
+    <string name="share_your_achievement">Поделись своим достижением</string>
+    <string name="message_for_share">Моя команда %1$s\ выиграла в CosmoAlias, набрав %2$d\ очков</string>
+
 </resources>

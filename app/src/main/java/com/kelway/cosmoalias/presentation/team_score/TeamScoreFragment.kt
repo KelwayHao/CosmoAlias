@@ -21,8 +21,7 @@ class TeamScoreFragment : Fragment(R.layout.fragment_team_score) {
 
     private val endRounds = object : ListenerEndRounds {
         override fun actionEndRounds() {
-            //findNavController().navigate()
-            showSnack("fdfdassasa", requireView())
+            findNavController().navigate(R.id.actionTeamScoreFragmentToResultGameFragment)
         }
     }
 
