@@ -109,5 +109,17 @@
         <action
             android:id="@+id/actionTeamScoreFragmentToGamePlayFragment"
             app:destination="@id/gamePlayFragment" />
+        <action
+            android:id="@+id/actionTeamScoreFragmentToResultGameFragment"
+            app:destination="@id/resultGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultGameFragment"
+        android:name="com.kelway.cosmoalias.presentation.result_game.ResultGameFragment"
+        android:label="ResultGameFragment"
+        tools:layout ="@layout/fragment_result_game">
+        <action
+            android:id="@+id/actionResultGameFragmentToMainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
     </fragment>
 </navigation>
