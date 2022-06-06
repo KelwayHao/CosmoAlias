@@ -62,5 +62,6 @@
     <string name="point_string">очков</string>
     <string name="share_your_achievement">Поделись своим достижением</string>
     <string name="message_for_share">Моя команда %1$s\ выиграла в CosmoAlias, набрав %2$d\ очков</string>
-
+    <string name="sure">Подтвердить</string>
+    <string name="remove_permission_question">Вы действительно хотите удалить?</string>
 </resources>

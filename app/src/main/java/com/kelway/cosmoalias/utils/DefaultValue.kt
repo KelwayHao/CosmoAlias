@@ -7,7 +7,7 @@ import com.kelway.cosmoalias.domain.models.WordsSet
 class DefaultValue {
     companion object {
         val FIRST_WORD_SET = WordsSet(0, "Базовый уровень", "Набор из оригинальной настольной игры. Содержит слова и словосочетания разной сложности.",
-            listOf("крокодил", "рыба", "страус", "скелет"))
+            listOf("крокодил", "рыба", "страус", "скелет", "петух", "попугай", "белка", "волк", "лисица"))
 
         val DEFAULT_TEAM = listOf(
             Team(0, "Альянс Республики", 0),

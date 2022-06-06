@@ -4,12 +4,16 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.RecyclerView
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.kelway.cosmoalias.R
 import com.kelway.cosmoalias.databinding.FragmentTeamBinding
 import com.kelway.cosmoalias.presentation.CosmoAliasApplication
+import com.kelway.cosmoalias.presentation.swipetodeletecallaback.SwipeToDeleteCallback
 import com.kelway.cosmoalias.utils.DefaultValue
 import com.kelway.cosmoalias.utils.dialogInputText
+import com.kelway.cosmoalias.utils.dialogPermission
 import com.kelway.cosmoalias.utils.preference.SharedPreferencesManager
 import com.kelway.cosmoalias.utils.showSnack
 import javax.inject.Inject
@@ -24,6 +28,25 @@ class TeamFragment : Fragment(R.layout.fragment_team) {
     private val binding by viewBinding<FragmentTeamBinding>()
     private val adapter by lazy { TeamAdapter() }
 
+    private val swipeToDeleteCallback = object : SwipeToDeleteCallback() {
+        override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+            val position = viewHolder.absoluteAdapterPosition
+
+            dialogPermission(
+                getString(R.string.remove_permission_question),
+                requireContext(),
+                onPositiveButtonClick = {
+                    teamViewModel.removeItem(position)?.let { team ->
+                        teamViewModel.deleteTeam(team)
+                    }
+                    binding.recyclerNameTeam.adapter?.notifyItemRemoved(position)
+                },
+                onNegativeButtonClick = {
+                    teamViewModel.loadTeam()
+                }
+            )
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,6 +88,8 @@ class TeamFragment : Fragment(R.layout.fragment_team) {
         teamViewModel.team.observe(viewLifecycleOwner) { listObserver ->
             adapter.submitItem(listObserver)
         }
+
+        ItemTouchHelper(swipeToDeleteCallback).attachToRecyclerView(binding.recyclerNameTeam)
     }
 
     private fun loadDefaultValue() {
