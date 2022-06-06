@@ -24,7 +24,7 @@ class WordsSetViewModel @Inject constructor(private val interactor: WordsSetInte
         loadWordSets()
     }
 
-    private fun loadWordSets() {
+    fun loadWordSets() {
         interactor.getAllWordsSet()
             .map { listWordsSet ->
                 _wordSets.postValue(listWordsSet)
@@ -46,7 +46,7 @@ class WordsSetViewModel @Inject constructor(private val interactor: WordsSetInte
         }
     }
 
-    fun getSize(): Int {
-        return sizeList
+    fun removeItem(position: Int): WordsSet? {
+        return _wordSets.value?.toMutableList()?.removeAt(position)
     }
 }

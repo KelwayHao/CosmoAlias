@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.kelway.cosmoalias.domain.interactor.team.TeamInteractor
 import com.kelway.cosmoalias.domain.models.Team
+import com.kelway.cosmoalias.domain.models.WordsSet
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
@@ -22,7 +23,7 @@ class TeamViewModel @Inject constructor(
         loadTeam()
     }
 
-    private fun loadTeam() {
+    fun loadTeam() {
         interactor.getAllTeam()
             .map { listTeam ->
                 _team.postValue(listTeam)
@@ -64,5 +65,9 @@ class TeamViewModel @Inject constructor(
 
     fun getSize(): Int {
         return sizeList
+    }
+
+    fun removeItem(position: Int): Team? {
+        return _team.value?.toMutableList()?.removeAt(position)
     }
 }
