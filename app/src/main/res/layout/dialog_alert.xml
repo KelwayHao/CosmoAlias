@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/frame_background"
+    android:padding="24dp">
+
+
+    <TextView
+        android:id="@+id/title_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/purple_700"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_dialog">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonNegativeAnswer"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/gradient_circle_negative"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/negative_image"
+            app:layout_constraintEnd_toStartOf="@+id/buttonPositiveAnswer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_team_input" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonPositiveAnswer"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/gradient_circle_positive"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/positive_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/buttonNegativeAnswer"
+            app:layout_constraintTop_toBottomOf="@+id/et_team_input" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

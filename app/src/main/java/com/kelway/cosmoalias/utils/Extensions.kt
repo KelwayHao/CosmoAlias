@@ -51,18 +51,25 @@ fun Fragment.dialogPermission(
     onNegativeButtonClick: () -> Unit
 ) {
     val builder = AlertDialog.Builder(context)
-    builder.setTitle(R.string.enter_name_team)
-        .setMessage(message)
-        .setCancelable(false)
-        .setPositiveButton(getString(R.string.sure)) { dialogMessage, _ ->
-            onPositiveButtonClick()
-            dialogMessage.cancel()
-        }
-        .setNegativeButton(getString(R.string.cancel)) { dialogMessage, _ ->
-            onNegativeButtonClick()
-            dialogMessage.cancel()
-        }
-    builder.show()
+    val dialogLayout = layoutInflater.inflate(R.layout.dialog_alert, null)
+    val textViewTitle = dialogLayout.findViewById<TextView>(R.id.title_dialog)
+    val negativeButton = dialogLayout.findViewById<ImageButton>(R.id.buttonNegativeAnswer)
+    val positiveButton = dialogLayout.findViewById<ImageButton>(R.id.buttonPositiveAnswer)
+    builder.setCancelable(false)
+    builder.setView(dialogLayout)
+
+    val alertDialog = builder.create()
+    alertDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+    textViewTitle.text = message
+    positiveButton.setOnClickListener {
+        onPositiveButtonClick()
+        alertDialog.cancel()
+    }
+    negativeButton.setOnClickListener {
+        onNegativeButtonClick()
+        alertDialog.cancel()
+    }
+    alertDialog.show()
 }
 
 fun String.isValidationTeam(): Boolean {

@@ -12,7 +12,7 @@ import com.kelway.cosmoalias.presentation.CosmoAliasApplication
 import com.kelway.cosmoalias.utils.showSnack
 import javax.inject.Inject
 
-class AddOwnSetFragment: Fragment(R.layout.fragment_add_own_set) {
+class AddOwnSetFragment : Fragment(R.layout.fragment_add_own_set) {
 
     @Inject
     lateinit var addSetViewModel: AddOwnSetViewModel
@@ -38,6 +38,7 @@ class AddOwnSetFragment: Fragment(R.layout.fragment_add_own_set) {
                     showSnack(getString(message), requireView())
                 }
             }
+
         }
     }
 }
