@@ -4,7 +4,6 @@ import android.app.AlertDialog
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.Drawable
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageButton
@@ -64,4 +63,24 @@ fun Fragment.dialogPermission(
             dialogMessage.cancel()
         }
     builder.show()
+}
+
+fun String.isValidationTeam(): Boolean {
+    return Regex(Constants.VALID_TEAM).matches(this)
+}
+
+fun String.isValidationTitleWordsSet(): Boolean {
+    return Regex(Constants.VALID_WORDS_SET).matches(this)
+}
+
+fun String.isValidationCountWords(): Boolean {
+    return Regex(Constants.VALID_COUNT_WORDS).matches(this)
+}
+
+fun String.isValidationCountRounds(): Boolean {
+    return Regex(Constants.VALID_COUNT_ROUNDS).matches(this)
+}
+
+fun String.isValidationTimeRound(): Boolean {
+    return Regex(Constants.VALID_TIME_ROUND).matches(this)
 }

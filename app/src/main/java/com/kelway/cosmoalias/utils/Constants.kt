@@ -11,5 +11,11 @@ class Constants {
 
         const val REWARD_TRUE_ANSWER = 2
         const val PENALTY_FALSE_ANSWER = 1
+
+        const val VALID_TEAM = """[\d|\w]{3,12}"""
+        const val VALID_WORDS_SET = """[\d|\w]{5,20}"""
+        const val VALID_COUNT_WORDS = """[\d]{50,500}"""
+        const val VALID_COUNT_ROUNDS = """[\d]{2,6}"""
+        const val VALID_TIME_ROUND = """[\d]{10,120}"""
     }
 }

@@ -41,7 +41,7 @@
     <string name="enter_name_team">Введите название команды</string>
     <string name="create">Создать</string>
     <string name="cancel">Отмена</string>
-    <string name="restrictions_input">Не более 20 символов</string>
+    <string name="restrictions_input">Введите название 3\-12 символов</string>
     <string name="rules_min_team">Для того, чтобы сыграть игру, необходимо как минимум две команды</string>
     <string name="rules_max_team">Игра расчитана на 5 команд</string>
     <string name="base_lvl">Базовый уровень</string>
@@ -64,4 +64,5 @@
     <string name="message_for_share">Моя команда %1$s\ выиграла в CosmoAlias, набрав %2$d\ очков</string>
     <string name="sure">Подтвердить</string>
     <string name="remove_permission_question">Вы действительно хотите удалить?</string>
+    <string name="team_created_message">Команда создана</string>
 </resources>

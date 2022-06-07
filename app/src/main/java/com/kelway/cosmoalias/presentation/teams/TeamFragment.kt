@@ -11,7 +11,7 @@ import com.kelway.cosmoalias.R
 import com.kelway.cosmoalias.databinding.FragmentTeamBinding
 import com.kelway.cosmoalias.presentation.CosmoAliasApplication
 import com.kelway.cosmoalias.presentation.swipetodeletecallaback.SwipeToDeleteCallback
-import com.kelway.cosmoalias.utils.DefaultValue
+import com.kelway.cosmoalias.utils.DefaultDatabase
 import com.kelway.cosmoalias.utils.dialogInputText
 import com.kelway.cosmoalias.utils.dialogPermission
 import com.kelway.cosmoalias.utils.preference.SharedPreferencesManager
@@ -69,7 +69,10 @@ class TeamFragment : Fragment(R.layout.fragment_team) {
         binding.buttonEnterNewName.setOnClickListener {
             if (teamViewModel.getSize() < 5) {
                 dialogInputText(requireContext(), { inputText ->
-                    teamViewModel.createTeam(inputText.text.toString())
+                    showSnack(
+                        getString(teamViewModel.createTeam(inputText.text.toString())),
+                        requireView()
+                    )
                 }, {})
             } else {
                 showSnack(getString(R.string.rules_max_team), requireView())
@@ -93,6 +96,6 @@ class TeamFragment : Fragment(R.layout.fragment_team) {
     }
 
     private fun loadDefaultValue() {
-        teamViewModel.defaultValue(DefaultValue.DEFAULT_TEAM)
+        teamViewModel.defaultValue(DefaultDatabase.DEFAULT_TEAM)
     }
 }
