@@ -3,37 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/CosmoAlias/app/src/main/res/drawable-v24/gradient_circle_negative.xml" value="0.1" />
-        <entry key="..\:/CosmoAlias/app/src/main/res/drawable-v24/gradient_circle_positive.xml" value="0.1" />
-        <entry key="..\:/CosmoAlias/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.233" />
-        <entry key="..\:/CosmoAlias/app/src/main/res/drawable/frame_background.xml" value="0.2765" />
-        <entry key="..\:/CosmoAlias/app/src/main/res/drawable/frame_background_purple.xml" value="0.1455" />
         <entry key="..\:/CosmoAlias/app/src/main/res/drawable/frame_background_transparent.xml" value="0.2455" />
-        <entry key="..\:/CosmoAlias/app/src/main/res/drawable/frame_edittext.xml" value="0.2765" />
         <entry key="..\:/CosmoAlias/app/src/main/res/drawable/gradient.xml" value="0.2785" />
         <entry key="..\:/CosmoAlias/app/src/main/res/drawable/gradient_circle.xml" value="0.2785" />
-        <entry key="..\:/CosmoAlias/app/src/main/res/drawable/ic_launcher_background.xml" value="0.233" />
         <entry key="..\:/CosmoAlias/app/src/main/res/drawable/splash_screen.xml" value="0.27" />
         <entry key="..\:/CosmoAlias/app/src/main/res/font/general_font.xml" value="0.10092592592592593" />
         <entry key="..\:/CosmoAlias/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/CosmoAlias/app/src/main/res/layout/dialog_alert_edittext.xml" value="0.33" />
         <entry key="..\:/CosmoAlias/app/src/main/res/layout/field_input_edittext.xml" value="0.25" />
         <entry key="..\:/CosmoAlias/app/src/main/res/layout/field_inputedittext.xml" value="0.42916666666666664" />
         <entry key="..\:/CosmoAlias/app/src/main/res/layout/fragment_about_app.xml" value="0.23013698630136986" />
-        <entry key="..\:/CosmoAlias/app/src/main/res/layout/fragment_add_own_set.xml" value="0.1" />
+        <entry key="..\:/CosmoAlias/app/src/main/res/layout/fragment_add_own_set.xml" value="0.33" />
         <entry key="..\:/CosmoAlias/app/src/main/res/layout/fragment_game_play.xml" value="0.33" />
         <entry key="..\:/CosmoAlias/app/src/main/res/layout/fragment_main_menu.xml" value="0.2332814930015552" />
-        <entry key="..\:/CosmoAlias/app/src/main/res/layout/fragment_result_game.xml" value="0.39357429718875503" />
         <entry key="..\:/CosmoAlias/app/src/main/res/layout/fragment_rules.xml" value="0.22" />
         <entry key="..\:/CosmoAlias/app/src/main/res/layout/fragment_setting.xml" value="0.33" />
         <entry key="..\:/CosmoAlias/app/src/main/res/layout/fragment_team.xml" value="0.5" />
-        <entry key="..\:/CosmoAlias/app/src/main/res/layout/fragment_team_score.xml" value="0.33" />
+        <entry key="..\:/CosmoAlias/app/src/main/res/layout/fragment_team_score.xml" value="0.42916666666666664" />
         <entry key="..\:/CosmoAlias/app/src/main/res/layout/fragment_word_sets.xml" value="0.25" />
         <entry key="..\:/CosmoAlias/app/src/main/res/layout/item_team.xml" value="0.33" />
         <entry key="..\:/CosmoAlias/app/src/main/res/layout/item_team_score.xml" value="0.42256410256410254" />
         <entry key="..\:/CosmoAlias/app/src/main/res/layout/item_tean_score.xml" value="0.42916666666666664" />
         <entry key="..\:/CosmoAlias/app/src/main/res/layout/item_word_set.xml" value="0.25" />
-        <entry key="..\:/GitHub/CosmoAlias/app/src/main/res/layout/fragment_setting.xml" value="0.16869300911854104" />
+        <entry key="..\:/GitHub/CosmoAlias/app/src/main/res/layout-v28/fragment_setting.xml" value="0.2368659420289855" />
+        <entry key="..\:/GitHub/CosmoAlias/app/src/main/res/layout/dialog_alert.xml" value="0.35054347826086957" />
+        <entry key="..\:/GitHub/CosmoAlias/app/src/main/res/layout/fragment_setting.xml" value="0.239880059970015" />
       </map>
     </option>
   </component>

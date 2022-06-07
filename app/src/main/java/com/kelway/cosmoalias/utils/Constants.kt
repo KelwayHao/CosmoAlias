@@ -14,8 +14,8 @@ class Constants {
 
         const val VALID_TEAM = """[\d|\w]{3,12}"""
         const val VALID_WORDS_SET = """[\d|\w]{5,20}"""
-        const val VALID_COUNT_WORDS = """[\d]{50,500}"""
-        const val VALID_COUNT_ROUNDS = """[\d]{2,6}"""
-        const val VALID_TIME_ROUND = """[\d]{10,120}"""
+        const val VALID_COUNT_WORDS = """[5-9][\d]|[1-4][\d][\d]|[5][0][0]"""
+        const val VALID_COUNT_ROUNDS = """[2-6]"""
+        const val VALID_TIME_ROUND = """[1-9][\d]|[1][0-1][\d]|[1][2][0]"""
     }
 }

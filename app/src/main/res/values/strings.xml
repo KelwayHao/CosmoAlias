@@ -30,7 +30,7 @@
     <string name="add_new_set_string">Добавить новый набор</string>
     <string name="title_enter_name_set">Введите название для набора слов</string>
     <string name="title_enter_words">Введите слова</string>
-    <string name="sample_sets_string">Например Мастер</string>
+    <string name="sample_sets_string">От 5 до 20 символов</string>
     <string name="team_score_title">Счет команд</string>
     <string name="start_string">Начать</string>
     <string name="team_sting">Team</string>
@@ -65,4 +65,8 @@
     <string name="sure">Подтвердить</string>
     <string name="remove_permission_question">Вы действительно хотите удалить?</string>
     <string name="team_created_message">Команда создана</string>
+    <string name="error_message_setting">Вы ввели неверный диапозон данных</string>
+    <string name="hint_number_laps">2-6</string>
+    <string name="hint_round_length">10-120</string>
+    <string name="hint_word_count">50-500</string>
 </resources>

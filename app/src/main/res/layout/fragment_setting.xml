@@ -33,6 +33,7 @@
 
 
         <TextView
+            android:id="@+id/titleCountWord"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -43,6 +44,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/titleRoundLength"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="97dp"
@@ -53,6 +55,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/titleCountLaps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="154dp"
@@ -66,40 +69,54 @@
             android:id="@+id/setting_word_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
             android:layout_marginEnd="20dp"
+            android:background="@drawable/frame_edittext"
+            android:hint="@string/hint_word_count"
             android:imeOptions="actionDone"
+            android:padding="8dp"
             android:singleLine="true"
-            android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/titleCountWord"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/titleCountWord" />
 
         <EditText
             android:id="@+id/setting_round_length"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="97dp"
             android:layout_marginEnd="20dp"
+            android:background="@drawable/frame_edittext"
+            android:hint="@string/hint_round_length"
             android:imeOptions="actionDone"
+            android:padding="8dp"
             android:singleLine="true"
-            android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/titleRoundLength"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="@+id/setting_word_count"
+            app:layout_constraintTop_toTopOf="@+id/titleRoundLength" />
 
         <EditText
             android:id="@+id/setting_numbers_laps"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="154dp"
             android:layout_marginEnd="20dp"
+            android:background="@drawable/frame_edittext"
+            android:hint="@string/hint_number_laps"
             android:imeOptions="actionDone"
+            android:padding="8dp"
             android:singleLine="true"
-            android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/titleCountLaps"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="@+id/setting_word_count"
+            app:layout_constraintTop_toTopOf="@+id/titleCountLaps" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

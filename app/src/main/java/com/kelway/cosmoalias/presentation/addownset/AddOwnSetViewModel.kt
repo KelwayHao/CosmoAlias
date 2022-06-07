@@ -1,6 +1,5 @@
 package com.kelway.cosmoalias.presentation.addownset
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.kelway.cosmoalias.R
 import com.kelway.cosmoalias.domain.interactor.words_set.WordsSetInteractor
 import com.kelway.cosmoalias.domain.models.WordsSet
+import com.kelway.cosmoalias.utils.isValidationTitleWordsSet
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
@@ -31,8 +31,13 @@ class AddOwnSetViewModel @Inject constructor(private val interactor: WordsSetInt
         }.launchIn(viewModelScope)
     }
 
-    fun createWordsSet(title: String, article: String, listWords: String, action: (message: Int, creationValidation: Boolean) -> Unit) {
-        if (title.isNotEmpty() && article.isNotEmpty() && listWords.isNotEmpty()) {
+    fun createWordsSet(
+        title: String,
+        article: String,
+        listWords: String,
+        action: (message: Int, creationValidation: Boolean) -> Unit
+    ) {
+        if (title.isNotEmpty() && title.isValidationTitleWordsSet() && article.isNotEmpty() && listWords.isNotEmpty()) {
             viewModelScope.launch {
                 interactor.saveWordsSet(
                     WordsSet(
