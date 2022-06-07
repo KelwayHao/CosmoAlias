@@ -11,7 +11,7 @@ import com.kelway.cosmoalias.R
 import com.kelway.cosmoalias.databinding.FragmentWordSetsBinding
 import com.kelway.cosmoalias.presentation.CosmoAliasApplication
 import com.kelway.cosmoalias.presentation.swipetodeletecallaback.SwipeToDeleteCallback
-import com.kelway.cosmoalias.utils.DefaultValue
+import com.kelway.cosmoalias.utils.DefaultDatabase
 import com.kelway.cosmoalias.utils.dialogPermission
 import com.kelway.cosmoalias.utils.preference.SharedPreferencesManager
 import javax.inject.Inject
@@ -76,6 +76,6 @@ class WordSetsFragment : Fragment(R.layout.fragment_word_sets) {
     }
 
     private fun loadDefaultValue() {
-        wordsSetViewModel.createWordsSet(DefaultValue.FIRST_WORD_SET)
+        wordsSetViewModel.createWordsSet(DefaultDatabase.FIRST_WORD_SET)
     }
 }
