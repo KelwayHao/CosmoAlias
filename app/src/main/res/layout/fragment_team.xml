@@ -52,7 +52,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/swipe_for_delete"
+            android:text="@string/prompt_for_delete_edit"
             android:textStyle="bold"
             android:elevation="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/recyclerNameTeam"

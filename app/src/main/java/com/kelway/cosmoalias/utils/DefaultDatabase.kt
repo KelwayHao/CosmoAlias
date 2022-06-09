@@ -147,5 +147,28 @@ class DefaultDatabase {
             Team(0, "Alliance", 0),
             Team(1, "Imperial", 0)
         )
+
+        val LIST_RANDOM_NAME_TEAM = listOf(
+            "Quessisan",
+            "Paylorlou",
+            "Tavinaggi",
+            "Assaultive",
+            "Ouster",
+            "Dreadlight",
+            "Hypophrenia",
+            "Plover",
+            "Megalith",
+            "Aexetan",
+            "Fractal",
+            "Papaur",
+            "Redshock",
+            "HoltHamlet",
+            "Gerbilator",
+            "Helixo",
+            "Marianni",
+            "Xander",
+            "Rleyn",
+            "Urianneriel"
+        )
     }
 }

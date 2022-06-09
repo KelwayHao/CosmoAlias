@@ -8,4 +8,5 @@ interface TeamInteractor {
     suspend fun createTeam(team: Team)
     suspend fun deleteTeam(team: Team)
     suspend fun clearTable()
+    suspend fun updateTeam(team: Team)
 }

@@ -28,4 +28,8 @@ class TeamInteractorImpl @Inject constructor(private val teamRepository: TeamRep
     override suspend fun clearTable() {
         teamRepository.clearTable()
     }
+
+    override suspend fun updateTeam(team: Team) {
+        teamRepository.updateTeam(team)
+    }
 }

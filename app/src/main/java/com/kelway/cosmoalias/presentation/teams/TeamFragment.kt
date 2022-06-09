@@ -9,7 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.kelway.cosmoalias.R
 import com.kelway.cosmoalias.databinding.FragmentTeamBinding
+import com.kelway.cosmoalias.domain.models.Team
 import com.kelway.cosmoalias.presentation.CosmoAliasApplication
+import com.kelway.cosmoalias.presentation.listener.ListenerClickNameChanger
 import com.kelway.cosmoalias.presentation.swipetodeletecallaback.SwipeToDeleteCallback
 import com.kelway.cosmoalias.utils.DefaultDatabase
 import com.kelway.cosmoalias.utils.dialogInputText
@@ -26,7 +28,17 @@ class TeamFragment : Fragment(R.layout.fragment_team) {
     @Inject
     lateinit var sharedPreferencesManager: SharedPreferencesManager
     private val binding by viewBinding<FragmentTeamBinding>()
-    private val adapter by lazy { TeamAdapter() }
+    private val adapter by lazy { TeamAdapter(clickNameChanger) }
+
+    private val clickNameChanger = object: ListenerClickNameChanger {
+        override fun actionClickNameChanger(team: Team) {
+            dialogInputText(requireContext(), { inputText ->
+                team.nameTeam = inputText.text.toString()
+                teamViewModel.updateTeam(team)
+                showSnack(getString(R.string.team_update_message),requireView())
+            }, {})
+        }
+    }
 
     private val swipeToDeleteCallback = object : SwipeToDeleteCallback() {
         override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
@@ -78,11 +90,20 @@ class TeamFragment : Fragment(R.layout.fragment_team) {
                 showSnack(getString(R.string.rules_max_team), requireView())
             }
         }
+
         binding.buttonNextTeam.setOnClickListener {
             if (teamViewModel.getSize() >= 2) {
                 findNavController().navigate(R.id.actionTeamFragmentToWordSetsFragment)
             } else {
                 showSnack(getString(R.string.rules_min_team), requireView())
+            }
+        }
+
+        binding.buttonRandomName.setOnClickListener {
+            if (teamViewModel.getSize() < 5) {
+                teamViewModel.createTeam(DefaultDatabase.LIST_RANDOM_NAME_TEAM.random())
+            } else {
+                showSnack(getString(R.string.rules_max_team), requireView())
             }
         }
     }

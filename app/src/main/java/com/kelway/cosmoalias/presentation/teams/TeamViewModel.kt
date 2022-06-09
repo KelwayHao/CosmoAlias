@@ -20,7 +20,9 @@ class TeamViewModel @Inject constructor(
     private val _team = MutableLiveData<List<Team>>()
     val team: LiveData<List<Team>> get() = _team
     private val sizeList get() = team.value?.size ?: 0
-
+    private val listNameTeam: List<String> get() = team.value?.map { team ->
+        team.nameTeam
+    } ?: listOf()
     init {
         loadTeam()
     }
@@ -34,19 +36,23 @@ class TeamViewModel @Inject constructor(
     }
 
     fun createTeam(nameTeam: String): Int {
-        return if (nameTeam.isValidationTeam()) {
-            viewModelScope.launch {
-                interactor.createTeam(
-                    Team(
-                        id = nameTeam.hashCode().toLong(),
-                        nameTeam = nameTeam,
-                        pointTeam = 0
+        return if (!listNameTeam.contains(nameTeam)) {
+            return if (nameTeam.isValidationTeam()) {
+                viewModelScope.launch {
+                    interactor.createTeam(
+                        Team(
+                            id = nameTeam.hashCode().toLong(),
+                            nameTeam = nameTeam,
+                            pointTeam = 0
+                        )
                     )
-                )
+                }
+                R.string.team_created_message
+            } else {
+                R.string.restrictions_input
             }
-            R.string.team_created_message
         } else {
-            R.string.restrictions_input
+            R.string.error_message_duplicate_team
         }
     }
 
@@ -76,5 +82,13 @@ class TeamViewModel @Inject constructor(
 
     fun removeItem(position: Int): Team? {
         return _team.value?.toMutableList()?.removeAt(position)
+    }
+
+    fun updateTeam(team: Team) {
+        viewModelScope.launch {
+            interactor.updateTeam(team)
+        }.invokeOnCompletion {
+            loadTeam()
+        }
     }
 }
