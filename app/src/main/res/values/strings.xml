@@ -65,9 +65,11 @@
     <string name="sure">Подтвердить</string>
     <string name="remove_permission_question">Вы действительно хотите удалить?</string>
     <string name="team_created_message">Команда создана</string>
+    <string name="team_update_message">Команда изменена</string>
     <string name="error_message_setting">Вы ввели неверный диапозон данных</string>
     <string name="hint_number_laps">2-6</string>
     <string name="hint_round_length">10-120</string>
     <string name="hint_word_count">50-500</string>
-    <string name="swipe_for_delete">Смахни, чтобы удалить команду</string>
+    <string name="prompt_for_delete_edit">Смахни, чтобы удалить команду\nНажми, чтобы сменить название</string>
+    <string name="error_message_duplicate_team">Такое название команды уже существует</string>
 </resources>

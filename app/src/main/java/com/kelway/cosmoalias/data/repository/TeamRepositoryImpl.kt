@@ -33,4 +33,10 @@ class TeamRepositoryImpl @Inject constructor(private val teamDao: TeamDao) : Tea
             teamDao.clearTable()
         }
     }
+
+    override suspend fun updateTeam(team: Team) {
+        return withContext(Dispatchers.IO) {
+            teamDao.updateTeamDao(team.teamToTeamEntity())
+        }
+    }
 }
