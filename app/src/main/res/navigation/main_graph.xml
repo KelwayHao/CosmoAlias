@@ -9,31 +9,38 @@
         android:id="@+id/mainMenuFragment"
         android:name="com.kelway.cosmoalias.presentation.fragments.MainMenuFragment"
         android:label="MainMenuFragment"
-        tools:layout ="@layout/fragment_main_menu">
+        tools:layout="@layout/fragment_main_menu">
         <action
             android:id="@+id/actionMainMenuFragmentToAboutAppFragment"
             app:destination="@id/aboutAppFragment"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out"
             app:popEnterAnim="@android:anim/fade_in"
-            app:popExitAnim="@android:anim/fade_out"/>
+            app:popExitAnim="@android:anim/fade_out" />
         <action
             android:id="@+id/actionMainMenuFragmentToRulesFragment"
             app:destination="@id/rulesFragment"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out"
             app:popEnterAnim="@android:anim/fade_in"
-            app:popExitAnim="@android:anim/fade_out"/>
+            app:popExitAnim="@android:anim/fade_out" />
         <action
             android:id="@+id/actionMainMenuFragmentToTeamFragment"
             app:destination="@id/teamFragment"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out"
             app:popEnterAnim="@android:anim/fade_in"
-            app:popExitAnim="@android:anim/fade_out"/>
+            app:popExitAnim="@android:anim/fade_out" />
         <action
             android:id="@+id/actionMainMenuFragmentToSettingFragment"
             app:destination="@id/settingFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/actionMainMenuFragmentToTeamScoreFragment"
+            app:destination="@id/teamScoreFragment"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out"
             app:popEnterAnim="@android:anim/fade_in"
@@ -43,83 +50,99 @@
         android:id="@+id/aboutAppFragment"
         android:name="com.kelway.cosmoalias.presentation.fragments.AboutAppFragment"
         android:label="AboutAppFragment"
-        tools:layout ="@layout/fragment_about_app"/>
+        tools:layout="@layout/fragment_about_app" />
     <fragment
         android:id="@+id/rulesFragment"
         android:name="com.kelway.cosmoalias.presentation.fragments.RulesFragment"
         android:label="RulesFragment"
-        tools:layout ="@layout/fragment_rules"/>
+        tools:layout="@layout/fragment_rules" />
     <fragment
         android:id="@+id/teamFragment"
         android:name="com.kelway.cosmoalias.presentation.teams.TeamFragment"
         android:label="TeamFragment"
-        tools:layout ="@layout/fragment_team">
+        tools:layout="@layout/fragment_team">
         <action
             android:id="@+id/actionTeamFragmentToWordSetsFragment"
             app:destination="@id/wordSetsFragment"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out"
             app:popEnterAnim="@android:anim/fade_in"
-            app:popExitAnim="@android:anim/fade_out"/>
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/settingFragment"
         android:name="com.kelway.cosmoalias.presentation.fragments.SettingFragment"
         android:label="SettingFragment"
-        tools:layout ="@layout/fragment_setting"/>
+        tools:layout="@layout/fragment_setting" />
     <fragment
         android:id="@+id/addOwnSetFragment"
         android:name="com.kelway.cosmoalias.presentation.addownset.AddOwnSetFragment"
         android:label="AddOwnSetFragment"
-        tools:layout ="@layout/fragment_add_own_set">
+        tools:layout="@layout/fragment_add_own_set">
         <action
             android:id="@+id/actionAddOwnSetFragmentToWordSetsFragment"
-            app:destination="@id/wordSetsFragment" />
+            app:destination="@id/wordSetsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/wordSetsFragment"
         android:name="com.kelway.cosmoalias.presentation.wordset.WordSetsFragment"
         android:label="WordSetsFragment"
-        tools:layout ="@layout/fragment_word_sets">
+        tools:layout="@layout/fragment_word_sets">
         <action
             android:id="@+id/actionWordSetsFragmentToAddOwnSetFragment"
             app:destination="@id/addOwnSetFragment"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out"
             app:popEnterAnim="@android:anim/fade_in"
-            app:popExitAnim="@android:anim/fade_out"/>
+            app:popExitAnim="@android:anim/fade_out" />
         <action
             android:id="@+id/actionWordSetsFragmentToTeamScoreFragment"
             app:destination="@id/teamScoreFragment"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out"
             app:popEnterAnim="@android:anim/fade_in"
-            app:popExitAnim="@android:anim/fade_out"/>
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/gamePlayFragment"
         android:name="com.kelway.cosmoalias.presentation.game_play.GamePlayFragment"
         android:label="GamePlayFragment"
-        tools:layout ="@layout/fragment_game_play"/>
+        tools:layout="@layout/fragment_game_play" />
     <fragment
         android:id="@+id/teamScoreFragment"
         android:name="com.kelway.cosmoalias.presentation.team_score.TeamScoreFragment"
         android:label="TeamScoreFragment"
-        tools:layout ="@layout/fragment_team_score">
+        tools:layout="@layout/fragment_team_score">
         <action
             android:id="@+id/actionTeamScoreFragmentToGamePlayFragment"
-            app:destination="@id/gamePlayFragment" />
+            app:destination="@id/gamePlayFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
         <action
             android:id="@+id/actionTeamScoreFragmentToResultGameFragment"
-            app:destination="@id/resultGameFragment" />
+            app:destination="@id/resultGameFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/resultGameFragment"
         android:name="com.kelway.cosmoalias.presentation.result_game.ResultGameFragment"
         android:label="ResultGameFragment"
-        tools:layout ="@layout/fragment_result_game">
+        tools:layout="@layout/fragment_result_game">
         <action
             android:id="@+id/actionResultGameFragmentToMainMenuFragment"
-            app:destination="@id/mainMenuFragment" />
+            app:destination="@id/mainMenuFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
 </navigation>
