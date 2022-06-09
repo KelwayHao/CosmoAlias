@@ -109,7 +109,7 @@
         android:id="@+id/textViewHeadTitleResultGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="36dp"
         android:text="@string/congratulation_string"
         android:textColor="@color/white"
         android:textSize="24sp"

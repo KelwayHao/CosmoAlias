@@ -3,136 +3,152 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_700"
-    android:padding="16dp">
+    android:background="@color/purple_700">
 
-    <TextView
-        android:id="@+id/textViewHeadTitleSettings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="@string/settings_string"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="center"
+        android:src="@drawable/background_image" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/frame_background_transparent"
-        android:padding="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/button_save_settings"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewHeadTitleSettings">
-
+        android:layout_height="match_parent"
+        android:paddingHorizontal="16dp">
 
         <TextView
-            android:id="@+id/titleCountWord"
+            android:id="@+id/textViewHeadTitleSettings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="@string/count_words_string"
+            android:layout_marginTop="36dp"
+            android:text="@string/settings_string"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/titleRoundLength"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="97dp"
-            android:text="@string/long_round_string"
-            android:textColor="@color/white"
-            android:textSize="18sp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/frame_background_transparent"
+            android:padding="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/button_save_settings"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewHeadTitleSettings">
 
-        <TextView
-            android:id="@+id/titleCountLaps"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="154dp"
-            android:text="@string/count_around_string"
+
+            <TextView
+                android:id="@+id/titleCountWord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/count_words_string"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/titleRoundLength"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="97dp"
+                android:text="@string/long_round_string"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/titleCountLaps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="154dp"
+                android:text="@string/count_around_string"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/setting_word_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/frame_edittext"
+                android:hint="@string/hint_word_count"
+                android:imeOptions="actionDone"
+                android:padding="8dp"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/titleCountWord"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/titleCountWord" />
+
+            <EditText
+                android:id="@+id/setting_round_length"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/frame_edittext"
+                android:hint="@string/hint_round_length"
+                android:imeOptions="actionDone"
+                android:padding="8dp"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/titleRoundLength"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/setting_word_count"
+                app:layout_constraintTop_toTopOf="@+id/titleRoundLength" />
+
+            <EditText
+                android:id="@+id/setting_numbers_laps"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/frame_edittext"
+                android:hint="@string/hint_number_laps"
+                android:imeOptions="actionDone"
+                android:padding="8dp"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/titleCountLaps"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/setting_word_count"
+                app:layout_constraintTop_toTopOf="@+id/titleCountLaps" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_save_settings"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="53dp"
+            android:background="@drawable/gradient"
+            android:text="@string/save_string"
+            android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/setting_word_count"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/frame_edittext"
-            android:hint="@string/hint_word_count"
-            android:imeOptions="actionDone"
-            android:padding="8dp"
-            android:singleLine="true"
-            android:textAlignment="center"
-            android:textColor="@color/black"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/titleCountWord"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/titleCountWord" />
-
-        <EditText
-            android:id="@+id/setting_round_length"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/frame_edittext"
-            android:hint="@string/hint_round_length"
-            android:imeOptions="actionDone"
-            android:padding="8dp"
-            android:singleLine="true"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/titleRoundLength"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/setting_word_count"
-            app:layout_constraintTop_toTopOf="@+id/titleRoundLength" />
-
-        <EditText
-            android:id="@+id/setting_numbers_laps"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/frame_edittext"
-            android:hint="@string/hint_number_laps"
-            android:imeOptions="actionDone"
-            android:padding="8dp"
-            android:singleLine="true"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/titleCountLaps"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/setting_word_count"
-            app:layout_constraintTop_toTopOf="@+id/titleCountLaps" />
-
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_save_settings"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginBottom="53dp"
-        android:background="@drawable/gradient"
-        android:text="@string/save_string"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
