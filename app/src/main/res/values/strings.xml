@@ -46,7 +46,7 @@
     <string name="rules_max_team">Игра расчитана на 5 команд</string>
     <string name="base_lvl">Базовый уровень</string>
     <string name="enter_description">Введите описание набора</string>
-    <string name="sample_description_string">Например Набор для Друзей</string>
+    <string name="sample_description_string">Например Набор для лёгкой тусовки</string>
     <string name="sample_words_string">Вводите слова через запятую</string>
     <string name="set_create_message">Новый набор был создан</string>
     <string name="set_error_message">Заполните все поля</string>
@@ -69,4 +69,5 @@
     <string name="hint_number_laps">2-6</string>
     <string name="hint_round_length">10-120</string>
     <string name="hint_word_count">50-500</string>
+    <string name="swipe_for_delete">Смахни, чтобы удалить команду</string>
 </resources>

@@ -20,7 +20,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="Базовый уровень"
             android:textColor="@color/purple_700"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -32,7 +31,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="Набор из оригинальной настольной игры. Содержит слова и словосочетания разной сложности. "
             android:textColor="@color/purple_500"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -58,10 +56,11 @@
             android:id="@+id/textCountWordInSet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:textColor="@color/purple_700"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/button_enter_word_set"
+            app:layout_constraintTop_toTopOf="@+id/button_enter_word_set"
             app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
