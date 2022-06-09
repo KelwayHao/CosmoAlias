@@ -9,6 +9,7 @@ import com.kelway.cosmoalias.R
 import com.kelway.cosmoalias.databinding.FragmentTeamScoreBinding
 import com.kelway.cosmoalias.presentation.CosmoAliasApplication
 import com.kelway.cosmoalias.presentation.listener.ListenerEndRounds
+import com.kelway.cosmoalias.utils.preference.SharedPreferencesManager
 import com.kelway.cosmoalias.utils.showSnack
 import javax.inject.Inject
 
@@ -16,11 +17,15 @@ class TeamScoreFragment : Fragment(R.layout.fragment_team_score) {
 
     @Inject
     lateinit var teamScoreViewModel: TeamScoreViewModel
+    @Inject
+    lateinit var sharedPreferencesManager: SharedPreferencesManager
+
     private val binding by viewBinding<FragmentTeamScoreBinding>()
     private val adapter by lazy { TeamScoreAdapter() }
 
     private val endRounds = object : ListenerEndRounds {
         override fun actionEndRounds() {
+            sharedPreferencesManager.saveBoolean("continueGame", false)
             findNavController().navigate(R.id.actionTeamScoreFragmentToResultGameFragment)
         }
     }
@@ -38,6 +43,7 @@ class TeamScoreFragment : Fragment(R.layout.fragment_team_score) {
 
     private fun initView() {
         binding.recyclerTeamScore.adapter = adapter
+        sharedPreferencesManager.saveBoolean("continueGame", true)
         binding.buttonStartTeamScore.setOnClickListener {
             findNavController().navigate(R.id.actionTeamScoreFragmentToGamePlayFragment)
         }

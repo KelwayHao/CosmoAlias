@@ -1,5 +1,6 @@
 package com.kelway.cosmoalias.presentation.fragments
 
+import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -19,6 +20,12 @@ class MainMenuFragment : Fragment(R.layout.fragment_main_menu) {
     override fun onStart() {
         super.onStart()
         CosmoAliasApplication.appComponent?.inject(this)
+        if (sharedPreferencesManager.getBoolean("continueGame", false)) {
+            binding.buttonContinue.visibility = View.VISIBLE
+            binding.buttonContinue.setOnClickListener {
+                findNavController().navigate(R.id.actionMainMenuFragmentToTeamScoreFragment)
+            }
+        }
         binding.buttonInfo.setOnClickListener {
             findNavController().navigate(R.id.actionMainMenuFragmentToAboutAppFragment)
         }
