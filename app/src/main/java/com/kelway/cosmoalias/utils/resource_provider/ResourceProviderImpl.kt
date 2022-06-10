@@ -7,4 +7,8 @@ class ResourceProviderImpl @Inject constructor(private val context: Context) : R
     override fun getString(id: Int): String {
         return context.getString(id)
     }
+
+    override fun getString(id: Int, string: String): String {
+        return context.getString(id, string)
+    }
 }

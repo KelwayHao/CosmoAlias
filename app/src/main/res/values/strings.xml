@@ -72,4 +72,6 @@
     <string name="hint_word_count">50–500</string>
     <string name="prompt_for_delete_edit">Swipe to delete team\nClick to change name</string>
     <string name="error_message_duplicate_team">This team name already exists</string>
+    <string name="about_app_article_string">This is a mobile version of the beloved Alias game. The goal of the players is to explain the word to teammates, without using gestures, pronouncing the hidden word and words with the same root. The team that guessed the most words at the end of all rounds wins.</string>
+    <string name="count_word">%1$s\ words</string>
 </resources>

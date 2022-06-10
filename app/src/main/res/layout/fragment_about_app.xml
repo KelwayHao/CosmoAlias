@@ -47,8 +47,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titleArticleAboutApp"
-            android:text="Это мобильная версия полюбившейся всем игры Алиас. Целью игроков является объяснение слова напарникам по команде, без использования жестов, произнесения загаданного слова и однокоренных с ним слов.
-Побеждает команда, которая угадала большее количество слов по итогом всех раундов."
+            android:text="@string/about_app_article_string"
             android:textColor="@color/purple_500"
             android:textSize="18sp" />
 
