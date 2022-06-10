@@ -9,7 +9,8 @@ import com.kelway.cosmoalias.domain.models.TeamScore
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class ResultGameViewModel @Inject constructor(private val interactor: TeamScoreInteractor): ViewModel() {
+class ResultGameViewModel @Inject constructor(private val interactor: TeamScoreInteractor) :
+    ViewModel() {
 
     private val _team = MutableLiveData<TeamScore>()
     val team: LiveData<TeamScore> get() = _team

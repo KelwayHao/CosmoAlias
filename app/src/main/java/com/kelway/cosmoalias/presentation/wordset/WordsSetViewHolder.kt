@@ -12,7 +12,8 @@ import com.kelway.cosmoalias.utils.Constants
 import com.kelway.cosmoalias.utils.preference.SharedPreferencesManager
 import javax.inject.Inject
 
-class WordsSetViewHolder(private val binding: ItemWordSetBinding) : RecyclerView.ViewHolder(binding.root) {
+class WordsSetViewHolder(private val binding: ItemWordSetBinding) :
+    RecyclerView.ViewHolder(binding.root) {
     @Inject
     lateinit var sharedPreferencesManager: SharedPreferencesManager
 
@@ -38,7 +39,8 @@ class WordsSetViewHolder(private val binding: ItemWordSetBinding) : RecyclerView
             binding.buttonEnterWordSet.setOnClickListener {
                 sharedPreferencesManager.save(Constants.SELECTED_SET, id.toString())
                 sharedPreferencesManager.saveInt(Constants.COUNT_LAPS, 1)
-                itemView.findNavController().navigate(R.id.actionWordSetsFragmentToTeamScoreFragment)
+                itemView.findNavController()
+                    .navigate(R.id.actionWordSetsFragmentToTeamScoreFragment)
             }
         }
     }

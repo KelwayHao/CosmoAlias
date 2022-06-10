@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
-class TeamInteractorImpl @Inject constructor(private val teamRepository: TeamRepository):
+class TeamInteractorImpl @Inject constructor(private val teamRepository: TeamRepository) :
     TeamInteractor {
     override fun getAllTeam(): Flow<List<Team>> {
         return teamRepository.getAllTeam().map { listTeamEntity ->

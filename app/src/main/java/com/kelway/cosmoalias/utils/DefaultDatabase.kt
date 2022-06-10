@@ -2,8 +2,6 @@ package com.kelway.cosmoalias.utils
 
 import com.kelway.cosmoalias.domain.models.Team
 import com.kelway.cosmoalias.domain.models.WordsSet
-import com.kelway.cosmoalias.utils.resource_provider.ResourceProvider
-import javax.inject.Inject
 
 class DefaultDatabase {
 

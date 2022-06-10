@@ -2,7 +2,7 @@ package com.kelway.cosmoalias.utils
 
 class Constants {
     companion object {
-        const val SELECTED_SET = "Selected set"
+        const val SELECTED_SET = "SELECTED_SET"
 
         const val WORD_COUNT = "WORD_COUNT"
         const val ROUND_LENGTH = "ROUND_LENGTH"

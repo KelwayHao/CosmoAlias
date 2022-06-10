@@ -16,8 +16,8 @@ interface DataModule {
     fun bindsTeamRepository(teamRepositoryImpl: TeamRepositoryImpl): TeamRepository
 
     @Binds
-    fun bindsWordsSetRepository(wordsSetRepositoryImpl: WordsSetRepositoryImpl) : WordsSetRepository
+    fun bindsWordsSetRepository(wordsSetRepositoryImpl: WordsSetRepositoryImpl): WordsSetRepository
 
     @Binds
-    fun bindsTeamScoreRepository(teamScoreRepositoryImpl: TeamScoreRepositoryImpl) : TeamScoreRepository
+    fun bindsTeamScoreRepository(teamScoreRepositoryImpl: TeamScoreRepositoryImpl): TeamScoreRepository
 }
