@@ -10,13 +10,15 @@ import com.kelway.cosmoalias.domain.models.WordsSet
 import com.kelway.cosmoalias.presentation.CosmoAliasApplication
 import com.kelway.cosmoalias.utils.Constants
 import com.kelway.cosmoalias.utils.preference.SharedPreferencesManager
+import com.kelway.cosmoalias.utils.resource_provider.ResourceProvider
 import javax.inject.Inject
 
 class WordsSetViewHolder(private val binding: ItemWordSetBinding) :
     RecyclerView.ViewHolder(binding.root) {
     @Inject
     lateinit var sharedPreferencesManager: SharedPreferencesManager
-
+    @Inject
+    lateinit var resourceProvider: ResourceProvider
     companion object {
         fun newInstance(parent: ViewGroup) = WordsSetViewHolder(
             ItemWordSetBinding.bind(
@@ -35,7 +37,7 @@ class WordsSetViewHolder(private val binding: ItemWordSetBinding) :
         with(wordsSet) {
             binding.titleWordSet.text = title
             binding.textArticleWordSet.text = article
-            binding.textCountWordInSet.text = "${listWords.size.toString()} слов"
+            binding.textCountWordInSet.text = resourceProvider.getString(R.string.count_word, listWords.size.toString())
             binding.buttonEnterWordSet.setOnClickListener {
                 sharedPreferencesManager.save(Constants.SELECTED_SET, id.toString())
                 sharedPreferencesManager.saveInt(Constants.COUNT_LAPS, 1)
