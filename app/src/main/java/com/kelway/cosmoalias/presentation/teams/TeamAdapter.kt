@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kelway.cosmoalias.domain.models.Team
 import com.kelway.cosmoalias.presentation.listener.ListenerClickNameChanger
 
-class TeamAdapter(private val clickNameChanger: ListenerClickNameChanger) : RecyclerView.Adapter<TeamViewHolder>() {
+class TeamAdapter(private val clickNameChanger: ListenerClickNameChanger) :
+    RecyclerView.Adapter<TeamViewHolder>() {
     private var items: List<Team> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TeamViewHolder {

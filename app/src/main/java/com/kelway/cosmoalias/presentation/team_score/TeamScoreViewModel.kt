@@ -24,7 +24,7 @@ class TeamScoreViewModel @Inject constructor(private val interactor: TeamScoreIn
     private val _team = MutableLiveData<List<TeamScore>>()
     val team: LiveData<List<TeamScore>> get() = _team
 
-    lateinit var endGame: ListenerEndRounds
+    private lateinit var endGame: ListenerEndRounds
 
     init {
         loadTeam()
@@ -34,7 +34,7 @@ class TeamScoreViewModel @Inject constructor(private val interactor: TeamScoreIn
         viewModelScope.launch {
             interactor.getAllTeamScore().map { teamScore ->
                 teamScore.status = StatusTeam.AWAITING
-                updateTeamScore(teamScore)
+                updateTeamScore(teamScore).join()
             }
         }.invokeOnCompletion {
             loadTeam()
@@ -52,7 +52,7 @@ class TeamScoreViewModel @Inject constructor(private val interactor: TeamScoreIn
                 teamScore.status == StatusTeam.AWAITING
             }
             if (filterList.isEmpty()) {
-                if(countLaps < numberLapsGame) {
+                if (countLaps < numberLapsGame) {
                     sharedPreferencesManager.saveInt(Constants.COUNT_LAPS, countLaps + 1)
                     dataReset()
                 } else {
@@ -61,6 +61,7 @@ class TeamScoreViewModel @Inject constructor(private val interactor: TeamScoreIn
             } else {
                 filterList.first().status = StatusTeam.PLAYS
                 updateTeamScore(filterList.first())
+                Log.e("Список", listTeamScore.toString())
                 _team.postValue(listTeamScore)
             }
         }
@@ -70,9 +71,7 @@ class TeamScoreViewModel @Inject constructor(private val interactor: TeamScoreIn
         endGame = listenerEndRounds
     }
 
-    private fun updateTeamScore(teamScore: TeamScore) {
-        viewModelScope.launch {
-            interactor.updateTeamScore(teamScore)
-        }
+    private suspend fun updateTeamScore(teamScore: TeamScore) = viewModelScope.launch {
+        interactor.updateTeamScore(teamScore)
     }
 }

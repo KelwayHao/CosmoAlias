@@ -47,7 +47,10 @@ class ResultGameFragment : Fragment(R.layout.fragment_result_game) {
     private fun openIntent(teamScore: TeamScore) {
         val intent = Intent(Intent.ACTION_SEND).apply {
             type = "text/plain"
-            putExtra(Intent.EXTRA_TEXT, getString(R.string.message_for_share, teamScore.nameTeam, teamScore.pointTeam))
+            putExtra(
+                Intent.EXTRA_TEXT,
+                getString(R.string.message_for_share, teamScore.nameTeam, teamScore.pointTeam)
+            )
         }
 
         val intentChooser = Intent.createChooser(intent, getString(R.string.share_your_achievement))

@@ -1,6 +1,5 @@
 package com.kelway.cosmoalias.domain.di
 
-import com.kelway.cosmoalias.data.repository.TeamScoreRepositoryImpl
 import com.kelway.cosmoalias.domain.interactor.team.TeamInteractor
 import com.kelway.cosmoalias.domain.interactor.team.TeamInteractorImpl
 import com.kelway.cosmoalias.domain.interactor.teamscore.TeamScoreInteractor

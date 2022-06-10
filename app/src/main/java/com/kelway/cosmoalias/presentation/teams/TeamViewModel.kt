@@ -20,9 +20,11 @@ class TeamViewModel @Inject constructor(
     private val _team = MutableLiveData<List<Team>>()
     val team: LiveData<List<Team>> get() = _team
     private val sizeList get() = team.value?.size ?: 0
-    private val listNameTeam: List<String> get() = team.value?.map { team ->
-        team.nameTeam
-    } ?: listOf()
+    private val listNameTeam: List<String>
+        get() = team.value?.map { team ->
+            team.nameTeam
+        } ?: listOf()
+
     init {
         loadTeam()
     }

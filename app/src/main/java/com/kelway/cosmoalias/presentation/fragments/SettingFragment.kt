@@ -1,7 +1,6 @@
 package com.kelway.cosmoalias.presentation.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import by.kirich1409.viewbindingdelegate.viewBinding

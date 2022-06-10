@@ -30,12 +30,12 @@ class TeamFragment : Fragment(R.layout.fragment_team) {
     private val binding by viewBinding<FragmentTeamBinding>()
     private val adapter by lazy { TeamAdapter(clickNameChanger) }
 
-    private val clickNameChanger = object: ListenerClickNameChanger {
+    private val clickNameChanger = object : ListenerClickNameChanger {
         override fun actionClickNameChanger(team: Team) {
             dialogInputText(requireContext(), { inputText ->
                 team.nameTeam = inputText.text.toString()
                 teamViewModel.updateTeam(team)
-                showSnack(getString(R.string.team_update_message),requireView())
+                showSnack(getString(R.string.team_update_message), requireView())
             }, {})
         }
     }
@@ -77,6 +77,7 @@ class TeamFragment : Fragment(R.layout.fragment_team) {
     }
 
     private fun initView() {
+        val listRandomTeam = DefaultDatabase.LIST_RANDOM_NAME_TEAM.toMutableList()
         binding.recyclerNameTeam.adapter = adapter
         binding.buttonEnterNewName.setOnClickListener {
             if (teamViewModel.getSize() < 5) {
@@ -101,7 +102,9 @@ class TeamFragment : Fragment(R.layout.fragment_team) {
 
         binding.buttonRandomName.setOnClickListener {
             if (teamViewModel.getSize() < 5) {
-                teamViewModel.createTeam(DefaultDatabase.LIST_RANDOM_NAME_TEAM.random())
+                val teamRandom = listRandomTeam.random()
+                listRandomTeam.remove(teamRandom)
+                teamViewModel.createTeam(teamRandom)
             } else {
                 showSnack(getString(R.string.rules_max_team), requireView())
             }

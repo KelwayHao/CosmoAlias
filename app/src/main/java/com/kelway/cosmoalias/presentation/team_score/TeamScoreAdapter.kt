@@ -3,9 +3,7 @@ package com.kelway.cosmoalias.presentation.team_score
 import android.annotation.SuppressLint
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.kelway.cosmoalias.domain.models.Team
 import com.kelway.cosmoalias.domain.models.TeamScore
-import com.kelway.cosmoalias.presentation.teams.TeamViewHolder
 
 class TeamScoreAdapter() : RecyclerView.Adapter<TeamScoreViewHolder>() {
     private var items: List<TeamScore> = emptyList()

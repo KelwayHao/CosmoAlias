@@ -10,13 +10,14 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class WordsSetRepositoryImpl @Inject constructor(private val wordsSetDao: WordsSetDao): WordsSetRepository {
+class WordsSetRepositoryImpl @Inject constructor(private val wordsSetDao: WordsSetDao) :
+    WordsSetRepository {
     override fun getAllWordsSet(): Flow<List<WordsSetEntity>> {
         return wordsSetDao.getAllWordSetsDao()
     }
 
     override suspend fun saveWordsSet(wordsSet: WordsSet) {
-        return withContext(Dispatchers.IO){
+        return withContext(Dispatchers.IO) {
             wordsSetDao.saveWordsSetDao(wordSetEntity = wordsSet.wordsSetToEntity())
         }
     }
